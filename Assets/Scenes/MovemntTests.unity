@@ -6351,8 +6351,8 @@ GameObject:
   - component: {fileID: 1675021524}
   - component: {fileID: 1675021523}
   - component: {fileID: 1675021522}
-  - component: {fileID: 1675021521}
   - component: {fileID: 1675021526}
+  - component: {fileID: 1675021527}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6360,22 +6360,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1675021521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675021520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d7f2cd8f5729a4c90e35603f9655bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rotationSpeed: 100
-  gravity: -20
-  jumpForce: 10
 --- !u!136 &1675021522
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6493,6 +6477,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1675021527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675021520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22d602d22ae14342814578282069991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  strafeSpeed: 5
+  mouseSensitivity: 2
+  playerCamera: {fileID: 330585546}
+  minPich: -80
+  maxPich: 90
+  gravity: -9.8
+  jumpForce: 5
+  maxJumps: 2
 --- !u!1 &1775205707
 GameObject:
   m_ObjectHideFlags: 0
