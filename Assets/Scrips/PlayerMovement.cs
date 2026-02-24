@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             transform.right * (horizontal * strafeSpeed);
 
         // Character Jump
-        if (playerCharacterController.isGrounded && verticalVelocity < 0f) // Ground check: only "stick" to ground if we're moving downward
+        if (playerCharacterController.isGrounded && verticalVelocity < 0f)
         {
             verticalVelocity = -2f;
             jumpsUsed = 0;
