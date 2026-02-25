@@ -14,16 +14,21 @@ public class PlayerMovementTest : MonoBehaviour
     [SerializeField] private float maxPitch = 90f;
 
     [Header("Jump + Gravity")]
-    [SerializeField] private float gravity = -20f;         
-    [SerializeField] private float jumpHeight = 2f;       
+    [SerializeField] private float gravity = -20f;
+    [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private int maxJumps = 2;
 
     [Header("Forgiveness Timers")]
-    [SerializeField] private float coyoteTime = 0.12f;     
-    [SerializeField] private float jumpBufferTime = 0.12f;  
+    [SerializeField] private float coyoteTime = 0.12f;
+    [SerializeField] private float jumpBufferTime = 0.12f;
 
     [Header("Variable Jump Height")]
     [SerializeField] private float jumpCutMultiplier = 0.5f;
+
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed = 12f;
+    [SerializeField] private float dashDuration = 0.15f;
+    [SerializeField] private float dashCooldown = 0.6f;
 
     private CharacterController controller;
 
@@ -34,12 +39,18 @@ public class PlayerMovementTest : MonoBehaviour
     private bool jumpPressedThisFrame;
     private bool jumpReleasedThisFrame;
     private bool jumpHeld;
+    private bool dashPressedThisFrame;
 
     // State Layer
     private float pitch;
     private int jumpsUsed;
     private float coyoteTimer;
     private float jumpBufferTimer;
+
+    // Dash state
+    private float dashTimeRemaining;
+    private float dashCooldownRemaining;
+    private Vector3 dashDirection;
 
     // Force Layer
     private float verticalVelocity;
@@ -57,6 +68,7 @@ public class PlayerMovementTest : MonoBehaviour
         ReadInput();
         UpdateLook();
         UpdateTimersAndGround();
+        HandleDash();
         HandleJumpRequests();
         ApplyGravity();
         ApplyMovement();
@@ -74,6 +86,8 @@ public class PlayerMovementTest : MonoBehaviour
         jumpPressedThisFrame = Input.GetButtonDown("Jump");
         jumpReleasedThisFrame = Input.GetButtonUp("Jump");
         jumpHeld = Input.GetButton("Jump");
+
+        dashPressedThisFrame = Input.GetMouseButtonDown(1);
     }
 
     // State Layer (ground + timers + jump count reset)
@@ -98,9 +112,40 @@ public class PlayerMovementTest : MonoBehaviour
             jumpBufferTimer = jumpBufferTime;
         }
         else
-        { 
+        {
             jumpBufferTimer -= Time.deltaTime;
         }
+    }
+
+    // Dash (timers + direction)
+    private void HandleDash()
+    {
+        if (dashCooldownRemaining > 0f)
+        {
+            dashCooldownRemaining -= Time.deltaTime;
+        }
+        if (dashTimeRemaining > 0f)
+        {
+            dashTimeRemaining -= Time.deltaTime;
+        }   
+        if (!dashPressedThisFrame)
+        {
+            return;
+        }
+        if (dashTimeRemaining > 0f || dashCooldownRemaining > 0f)
+        {
+            return;
+        }
+
+        Vector3 wishDir = (transform.forward * moveInput.y) + (transform.right * moveInput.x);
+        if (wishDir.sqrMagnitude < 0.001f)
+        {
+            wishDir = transform.forward;
+        }
+            
+        dashDirection = wishDir.normalized;
+        dashTimeRemaining = dashDuration;
+        dashCooldownRemaining = dashCooldown;
     }
 
     // Constraint Layer + Jump Impulse
@@ -152,6 +197,11 @@ public class PlayerMovementTest : MonoBehaviour
             transform.forward * (moveInput.y * moveSpeed) +
             transform.right * (moveInput.x * strafeSpeed);
 
+        if (dashTimeRemaining > 0f)
+        {
+            horizontal = dashDirection * dashSpeed;
+        }
+
         Vector3 velocity = horizontal + Vector3.up * verticalVelocity;
         controller.Move(velocity * Time.deltaTime);
     }
@@ -165,6 +215,8 @@ public class PlayerMovementTest : MonoBehaviour
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
         if (playerCamera != null)
+        {
             playerCamera.localEulerAngles = new Vector3(pitch, 0f, 0f);
+        }
     }
 }

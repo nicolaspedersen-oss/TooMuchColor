@@ -6360,8 +6360,8 @@ GameObject:
   - component: {fileID: 1675021525}
   - component: {fileID: 1675021524}
   - component: {fileID: 1675021523}
-  - component: {fileID: 1675021527}
   - component: {fileID: 1675021526}
+  - component: {fileID: 1675021527}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6473,18 +6473,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675021520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22d602d22ae14342814578282069991, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cd8248be51cee9429e6d064c2e7e5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
   strafeSpeed: 10
-  mouseSensitivity: 2
+  mouseSensitivity: 1.5
   playerCamera: {fileID: 330585546}
-  minPich: -80
-  maxPich: 90
-  gravity: -65
-  jumpForce: 2
+  minPitch: -80
+  maxPitch: 90
+  gravity: -60
+  jumpHeight: 2.5
   maxJumps: 2
+  coyoteTime: 0.12
+  jumpBufferTime: 0.12
+  jumpCutMultiplier: 1
+  dashSpeed: 40
+  dashDuration: 0.15
+  dashCooldown: 0.6
 --- !u!1 &1775205707
 GameObject:
   m_ObjectHideFlags: 0

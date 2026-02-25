@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovementOLD : MonoBehaviour
+public class PlayerMovementOld : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float strafeSpeed = 5f;
@@ -14,7 +14,6 @@ public class PlayerMovementOLD : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private int maxJumps = 2;
 
-    private Vector3 moveDirection;
     private CharacterController playerCharacterController;
     private float pitch;
     private float verticalVelocity;
@@ -34,28 +33,27 @@ public class PlayerMovementOLD : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        moveDirection = this.transform.forward * vertical * moveSpeed * Time.deltaTime + 
-        transform.right * horizontal * strafeSpeed * Time.deltaTime;
+        Vector3 horizontalVelocity =
+            transform.forward * (vertical * moveSpeed) +
+            transform.right * (horizontal * strafeSpeed);
 
-        // Charcter Jump
-        if (playerCharacterController.isGrounded == true)
+        // Character Jump
+        if (playerCharacterController.isGrounded && verticalVelocity < 0f)
         {
             verticalVelocity = -2f;
             jumpsUsed = 0;
         }
-        if (playerCharacterController.isGrounded == false)
-        {
-            verticalVelocity += gravity * Time.deltaTime;
-        }
+
         if (Input.GetKeyDown(KeyCode.Space) && jumpsUsed < maxJumps)
         {
             jumpsUsed++;
             verticalVelocity = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
 
-        moveDirection.y = verticalVelocity;
+        verticalVelocity += gravity * Time.deltaTime;
 
-        playerCharacterController.Move(moveDirection);
+        Vector3 velocity = horizontalVelocity + Vector3.up * verticalVelocity;
+        playerCharacterController.Move(velocity * Time.deltaTime);
 
         // Mouse look
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
