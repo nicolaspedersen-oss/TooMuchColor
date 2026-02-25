@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class DestroyObstacle : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float damage = 25f;
+    [SerializeField] private float lifeTime = 5f;
+
+    private void Start()
     {
-        
+        Destroy(gameObject, lifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Red"))
+        {
+            TryGetComponent(out EnemyHealth obstacle);
+
+            obstacle.TakeDamage(damage);
+        }
+
+            Destroy(gameObject);
     }
 }

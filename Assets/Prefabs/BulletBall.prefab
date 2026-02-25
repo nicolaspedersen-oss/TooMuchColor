@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 21519590579393937}
   - component: {fileID: -9145692490323515383}
   - component: {fileID: 1648434491531089237}
+  - component: {fileID: 423747190088035734}
   m_Layer: 0
   m_Name: BulletBall
   m_TagString: Ball
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e252c1f56545e0845826bd7a972c7f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  lifeTime: 5
+--- !u!114 &423747190088035734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184434488155519289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa412d2d4cbd9c4eaaa8ce16dc4e656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
