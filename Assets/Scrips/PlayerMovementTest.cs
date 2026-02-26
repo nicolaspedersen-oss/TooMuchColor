@@ -33,7 +33,7 @@ public class PlayerMovementTest : MonoBehaviour
     private CharacterController controller;
 
     // Input Layer
-    private Vector2 moveInput;
+    private Vector3 moveInput;
     private float mouseX;
     private float mouseY;
     private bool jumpPressedThisFrame;

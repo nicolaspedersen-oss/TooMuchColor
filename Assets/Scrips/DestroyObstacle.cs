@@ -4,6 +4,7 @@ public class DestroyObstacle : MonoBehaviour
 {
     [SerializeField] private float damage = 25f;
     [SerializeField] private float lifeTime = 5f;
+    [SerializeField] private GameObject obstaclePrefab;
 
     private void Start()
     {
@@ -19,6 +20,6 @@ public class DestroyObstacle : MonoBehaviour
             obstacle.TakeDamage(damage);
         }
 
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

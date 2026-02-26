@@ -8,8 +8,16 @@ public class HitDetector : MonoBehaviour
     private bool isRunning = false;
     private Color originalColor;
 
+    private void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
     void Update()
     {
+
+
         if (isRunning == true)
         {
             HitDetection();
@@ -34,5 +42,14 @@ public class HitDetector : MonoBehaviour
             GetComponent<Renderer>().material.color = originalColor;
             isRunning = false;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(other.TryGetComponent(out EnemyHealth health))
+        {
+            //health.TakeDamage(25f);
+            //Destroy(gameObject);
+        }        
     }
 }
