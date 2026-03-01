@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  detectionRange: 20
+  detectionRange: 40
   attackRange: 2
 --- !u!114 &-3391698877407993230
 MonoBehaviour:
@@ -170,3 +170,4 @@ MonoBehaviour:
   moveSpeed: 3
   detectionRange: 10
   attackRange: 2
+  damage: 10
