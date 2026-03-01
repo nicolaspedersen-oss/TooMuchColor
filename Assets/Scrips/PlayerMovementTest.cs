@@ -23,12 +23,13 @@ public class PlayerMovementTest : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.12f;
 
     [Header("Variable Jump Height")]
-    [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float jumpCutMultiplier = 1f;
 
     [Header("Dash")]
-    [SerializeField] private float dashSpeed = 12f;
+    [SerializeField] private float dashSpeed = 50f;
     [SerializeField] private float dashDuration = 0.15f;
     [SerializeField] private float dashCooldown = 0.6f;
+    [SerializeField] private int maxDashes = 1;
 
     private CharacterController controller;
 
@@ -51,6 +52,7 @@ public class PlayerMovementTest : MonoBehaviour
     private float dashTimeRemaining;
     private float dashCooldownRemaining;
     private Vector3 dashDirection;
+    private int dashesRemaining;
 
     // Force Layer
     private float verticalVelocity;
@@ -58,6 +60,8 @@ public class PlayerMovementTest : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        dashesRemaining = maxDashes;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -102,6 +106,8 @@ public class PlayerMovementTest : MonoBehaviour
 
             jumpsUsed = 0;
             coyoteTimer = coyoteTime;
+
+            dashesRemaining = maxDashes;
         }
         else
         {
@@ -127,12 +133,16 @@ public class PlayerMovementTest : MonoBehaviour
         if (dashTimeRemaining > 0f)
         {
             dashTimeRemaining -= Time.deltaTime;
-        }   
+        }
         if (!dashPressedThisFrame)
         {
             return;
         }
         if (dashTimeRemaining > 0f || dashCooldownRemaining > 0f)
+        {
+            return;
+        }
+        if (dashesRemaining <= 0f)
         {
             return;
         }
@@ -142,8 +152,10 @@ public class PlayerMovementTest : MonoBehaviour
         {
             wishDir = transform.forward;
         }
-            
+
         dashDirection = wishDir.normalized;
+
+        dashesRemaining--;
         dashTimeRemaining = dashDuration;
         dashCooldownRemaining = dashCooldown;
     }
@@ -187,6 +199,12 @@ public class PlayerMovementTest : MonoBehaviour
     // Force Layer (gravity)
     private void ApplyGravity()
     {
+        if (dashTimeRemaining > 0f)
+        {
+            verticalVelocity = 0f;
+            return;
+        }
+
         verticalVelocity += gravity * Time.deltaTime;
     }
 
@@ -199,7 +217,10 @@ public class PlayerMovementTest : MonoBehaviour
 
         if (dashTimeRemaining > 0f)
         {
-            horizontal = dashDirection * dashSpeed;
+            Vector3 dashVelocity = dashDirection * dashSpeed;
+            controller.Move(dashVelocity * Time.deltaTime);
+            return;
+            //horizontal = dashDirection * dashSpeed;
         }
 
         Vector3 velocity = horizontal + Vector3.up * verticalVelocity;

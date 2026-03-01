@@ -1,23 +1,38 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerRespawn : MonoBehaviour
 {
-    [SerializeField] private Transform checkPoint;
+    private CharacterController characterController;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        
+        characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Respawn();
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Respawn()
     {
-        GetComponent<Transform>();
+        var mgr = CheckpointManager.Instance;
+
+        if (mgr == null || mgr.CurrentSpawnPoint == null) return;
+        {
+            // Turn off controller so we can move freely
+            characterController.enabled = false;
+        }
+
+        Transform sp = mgr.CurrentSpawnPoint;
+        transform.SetPositionAndRotation(sp.position, sp.rotation);
+
+        // Turn it back on
+        characterController.enabled = true;
     }
 }
