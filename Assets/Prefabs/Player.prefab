@@ -269,8 +269,8 @@ GameObject:
   - component: {fileID: 9038059922682205034}
   - component: {fileID: 8258840223862971036}
   - component: {fileID: 4066298887443796143}
-  - component: {fileID: 6411364406825895884}
   - component: {fileID: 4719684400154393948}
+  - component: {fileID: 6411364406825895884}
   - component: {fileID: -2411355897316107355}
   - component: {fileID: -4059768149643598103}
   - component: {fileID: 1912178151796072802}
@@ -390,6 +390,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshairTexture: {fileID: 2800000, guid: bae56595228f4e94eb2aa2213a4b4ed7, type: 3}
   size: 35
+--- !u!114 &4719684400154393948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024451427290266160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065f62ee683560542afe7af680ad4500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &6411364406825895884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,19 +431,6 @@ MonoBehaviour:
   dashDuration: 0.15
   dashCooldown: 0.6
   maxDashes: 1
---- !u!114 &4719684400154393948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5024451427290266160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065f62ee683560542afe7af680ad4500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!114 &-2411355897316107355
 MonoBehaviour:
   m_ObjectHideFlags: 0
