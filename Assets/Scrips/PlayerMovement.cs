@@ -1,14 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovementTest : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float strafeSpeed = 5f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float strafeSpeed = 10f;
 
     [Header("Mouse Look")]
-    [SerializeField] private float mouseSensitivity = 2f;
+    [SerializeField] private float mouseSensitivity = 1.3f;
     [SerializeField] private Transform playerCamera;
     [SerializeField] private float minPitch = -80f;
     [SerializeField] private float maxPitch = 90f;
