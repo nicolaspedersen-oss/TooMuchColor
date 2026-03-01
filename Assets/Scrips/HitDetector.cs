@@ -10,7 +10,7 @@ public class HitDetector : MonoBehaviour
 
     private void Start()
     {
-        
+        originalColor = GetComponent<Renderer>().material.color;
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class HitDetector : MonoBehaviour
     {
         if (collision.transform.tag == "Ball")
         {
-            originalColor = GetComponent<Renderer>().material.color;
             GetComponent<Renderer>().material.color = Color.red;
             timer = duration;
             isRunning = true;
