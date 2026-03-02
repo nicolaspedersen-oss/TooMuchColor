@@ -80,7 +80,7 @@ public class EnemyStatus : MonoBehaviour
         ai.IsRooted = true;
 
         yield return new WaitForSeconds(duration);
-
+        
         ai.IsRooted = false;
         Debug.Log("ROOT END", this);
     }

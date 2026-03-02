@@ -150,7 +150,7 @@ public class EnemyScript : MonoBehaviour
         //Vector3 move = dir * moveSpeed;
         move.y = verticalVelocity;
         controller.Move(move * Time.deltaTime);
-
+ 
         transform.rotation = Quaternion.LookRotation(dir);
     }
 
