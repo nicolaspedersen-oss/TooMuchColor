@@ -219,6 +219,14 @@ MonoBehaviour:
   attackRange: 2
   damage: 25
   gravity: -50
+  surroundRadius: 2.5
+  surroundJitter: 0.6
+  repathInterval: 0.2
+  separationRadius: 1.2
+  separationStrength: 3
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &-4123064481795310059
 MonoBehaviour:
   m_ObjectHideFlags: 0
