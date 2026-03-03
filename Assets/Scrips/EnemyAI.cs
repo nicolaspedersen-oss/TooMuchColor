@@ -17,14 +17,19 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float damage = 25f;
+    //[SerializeField] private float attackWindup = 0.35f;
 
     [Header("Gravity")]
     [SerializeField] private float gravity = -50f;
 
     private Transform player;
     private bool isChasing;
+
     private CharacterController controller;
     private NavMeshAgent agent;
+
+    private bool isWindingUp;
+    private bool windupEndTime;
 
     public float SpeedMultiplier { get; set; } = 1f;
     public bool IsRooted { get; set; } = false;

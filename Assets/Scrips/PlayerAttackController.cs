@@ -1,8 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerAttackController : MonoBehaviour
 {
-    [Header("Refs")]
+    [Header("Referances")]
     [SerializeField] private Transform muzzle;
     [SerializeField] private Camera playerCamera;
 
@@ -20,15 +22,23 @@ public class PlayerAttackController : MonoBehaviour
 
     [Header("Lightning Beam")]
     [SerializeField] private float beamRange = 40f;
-    [SerializeField] private float beamDamage = 10f;
+    [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
 
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
+    private LineRenderer lineRenderer;
+    public Transform beamOrigin;
+
+    private void Awake()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = 2;
+    }
 
     void Update()
     {
-        // quick element switching example (replace with your UI)
+        // Elemental attacks
         if (Input.GetKeyDown(KeyCode.Alpha1)) current = ElementType.Fire;
         if (Input.GetKeyDown(KeyCode.Alpha2)) current = ElementType.Water;
         if (Input.GetKeyDown(KeyCode.Alpha3)) current = ElementType.Lightning;
@@ -100,7 +110,7 @@ public class PlayerAttackController : MonoBehaviour
                 status.ApplyHit(h);
             }
 
-            // spawn beam impact VFX at hit.point
+            // spawn beam impact VFX at hit point
         }
 
         // draw line renderer from muzzle to hit point
@@ -140,7 +150,7 @@ public class PlayerAttackController : MonoBehaviour
                     damage = 20f,
                     element = ElementType.Fire,
                     dotDps = 6f,
-                    dotDuration = 3f
+                    dotDuration = 5f
                 };
 
             case ElementType.Water:
