@@ -27,13 +27,13 @@ public class PlayerAttackController : MonoBehaviour
 
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
-    private LineRenderer lineRenderer;
-    public Transform beamOrigin;
+    //private LineRenderer lineRenderer;
+    //public Transform beamOrigin;
 
     private void Awake()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 2;
+        //lineRenderer = GetComponent<LineRenderer>();
+        //lineRenderer.positionCount = 2;
     }
 
     void Update()

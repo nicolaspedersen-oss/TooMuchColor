@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5933489214816514071}
   - component: {fileID: 7900266976839953418}
   - component: {fileID: 3213642544779252754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1436874475645566813}
   - component: {fileID: 5750425639155036360}
   - component: {fileID: 5524495420540168847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7216892535172827918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: -4059768149643598103}
   - component: {fileID: 1912178151796072802}
   - component: {fileID: -355386121082479310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -499,7 +499,6 @@ MonoBehaviour:
   beamRange: 40
   beamDamage: 15
   beamTickRate: 12
-  beamOrigin: {fileID: 0}
 --- !u!1 &6549412232954192851
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,8 +510,7 @@ GameObject:
   - component: {fileID: 2710958898395186340}
   - component: {fileID: 4676422560081483262}
   - component: {fileID: 8507655239698238367}
-  - component: {fileID: 2185056769417379807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,30 +587,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2185056769417379807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6549412232954192851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18402eee06315bf4ab19d7209eef8a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzzleVelocity: 200
-  bulletBallPrefab: {fileID: 6184434488155519289, guid: bd4edee3d0ac01c4a88cfaac592282e4, type: 3}
-  muzzle: {fileID: 7216892535172827918}
-  playerCamera: {fileID: 1436874475645566813}
-  maxAimDistance: 200
-  aimMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  bulletUsesGravity: 0
 --- !u!1 &7367953036209117890
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +598,7 @@ GameObject:
   - component: {fileID: 942015767596147086}
   - component: {fileID: 7427810723618386709}
   - component: {fileID: 2352209625905828218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +684,7 @@ GameObject:
   - component: {fileID: 3293345293085770742}
   - component: {fileID: 7786333043958607359}
   - component: {fileID: 6607418327923810757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

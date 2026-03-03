@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2364425364999976467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EyePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4439690800649912766}
   - component: {fileID: -3668533942812105689}
   - component: {fileID: -4123064481795310059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -219,14 +219,6 @@ MonoBehaviour:
   attackRange: 2
   damage: 25
   gravity: -50
-  surroundRadius: 2.5
-  surroundJitter: 0.6
-  repathInterval: 0.2
-  separationRadius: 1.2
-  separationStrength: 3
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &-4123064481795310059
 MonoBehaviour:
   m_ObjectHideFlags: 0
