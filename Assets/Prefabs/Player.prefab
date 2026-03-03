@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: -2411355897316107355}
   - component: {fileID: -4059768149643598103}
   - component: {fileID: 1912178151796072802}
+  - component: {fileID: -355386121082479310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -403,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!114 &6411364406825895884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +470,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killY: -20
+--- !u!114 &-355386121082479310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024451427290266160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee823005884c86d46a2e459e9f85c8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 7216892535172827918}
+  playerCamera: {fileID: 1436874475645566813}
+  maxAimDistance: 200
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  fireProjectilePrefab: {fileID: 6184434488155519289, guid: abd746efd75a05d47b9f372c223bb717, type: 3}
+  waterProjectilePrefab: {fileID: 6184434488155519289, guid: 92b882f85b553cc45b9fde23b6051196, type: 3}
+  grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
+  muzzleVelocity: 200
+  usesGravity: 0
+  beamRange: 40
+  beamDamage: 15
+  beamTickRate: 12
+  beamOrigin: {fileID: 0}
 --- !u!1 &6549412232954192851
 GameObject:
   m_ObjectHideFlags: 0

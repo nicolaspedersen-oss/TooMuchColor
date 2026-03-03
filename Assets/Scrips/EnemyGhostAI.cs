@@ -6,7 +6,7 @@ public class EnemyGhostScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float attackRange = 2f;
-    [SerializeField] private float damage = 10f;
+    [SerializeField] private float damage = 0.2f;
 
     private Transform player;
     private bool isChasing;
