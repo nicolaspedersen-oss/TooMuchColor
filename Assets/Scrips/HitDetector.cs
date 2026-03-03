@@ -33,7 +33,7 @@ public class HitDetector : MonoBehaviour
             isRunning = true;
         }
     }
-    private void HitDetection()
+    public void HitDetection()
     {
         timer -= Time.deltaTime;
         if (timer <= 0f)

@@ -97,7 +97,7 @@ public class PlayerAttackController : MonoBehaviour
         if (Physics.Raycast(muzzle.position, dir, out RaycastHit hit, beamRange, aimMask, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.TryGetComponent(out EnemyHealth enemy))
-                enemy.TakeDamage(beamDamage);
+            enemy.TakeDamage(beamDamage);
 
             if (hit.collider.TryGetComponent(out EnemyStatus status))
             {
@@ -109,11 +109,7 @@ public class PlayerAttackController : MonoBehaviour
                 };
                 status.ApplyHit(h);
             }
-
-            // spawn beam impact VFX at hit point
         }
-
-        // draw line renderer from muzzle to hit point
     }
 
     Vector3 GetAimDirection(out RaycastHit camHit)
