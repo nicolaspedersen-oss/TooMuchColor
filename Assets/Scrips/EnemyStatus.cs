@@ -51,7 +51,7 @@ public class EnemyStatus : MonoBehaviour
                 }
                 break;
 
-                // Lightning can be added here
+                // Lightning here
         }
     }
 

@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float strafeSpeed = 10f;
-
+    
     [Header("Mouse Look")]
     [SerializeField] private float mouseSensitivity = 1.3f;
     [SerializeField] private Transform playerCamera;

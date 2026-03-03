@@ -21,7 +21,7 @@ public class PlayerAttackController : MonoBehaviour
     [Header("Lightning Beam")]
     [SerializeField] private float beamRange = 40f;
     [SerializeField] private float beamDamage = 10f;
-    [SerializeField] private float beamTickRate = 12f; // damage per second feel
+    [SerializeField] private float beamTickRate = 12f; // damage per second
 
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
@@ -83,7 +83,7 @@ public class PlayerAttackController : MonoBehaviour
 
         Vector3 dir = GetAimDirection(out RaycastHit hitInfo);
 
-        // beam is just a raycast
+        // Lightning beam uses raycast
         if (Physics.Raycast(muzzle.position, dir, out RaycastHit hit, beamRange, aimMask, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.TryGetComponent(out EnemyHealth enemy))
@@ -95,15 +95,15 @@ public class PlayerAttackController : MonoBehaviour
                 {
                     damage = 0f,
                     element = ElementType.Lightning
-                    // later: chain params, stun, etc.
+                    // stun effect, chain lightning
                 };
                 status.ApplyHit(h);
             }
 
-            // optional: spawn beam impact VFX at hit.point
+            // spawn beam impact VFX at hit.point
         }
 
-        // optional: draw line renderer from muzzle to hit point
+        // draw line renderer from muzzle to hit point
     }
 
     Vector3 GetAimDirection(out RaycastHit camHit)
@@ -131,7 +131,7 @@ public class PlayerAttackController : MonoBehaviour
 
     AttackHit BuildHitForCurrentElement()
     {
-        // Tune numbers however you like
+        // Element effects
         switch (current)
         {
             case ElementType.Fire:

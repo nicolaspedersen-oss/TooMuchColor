@@ -117,14 +117,14 @@ public class EnemyScript : MonoBehaviour
         if (player == null) return false;
 
         Vector3 origin = eyePoint != null ? eyePoint.position : transform.position + Vector3.up * 1.6f;
-        Vector3 target = player.position + Vector3.up * 1.2f; // aim at chest-ish
+        Vector3 target = player.position + Vector3.up * 1.2f; // aim at chest hight
         Vector3 dir = target - origin;
         float dist = dir.magnitude;
         if (dist <= 0.01f) return true;
 
         dir /= dist;
 
-        // If we hit an obstacle before reaching the player, LOS is blocked
+        // If the AI hits an obstacle before reaching the player, LOS is blocked
         return !Physics.Raycast(origin, dir, dist, visionBlockMask, QueryTriggerInteraction.Ignore);
     }
 

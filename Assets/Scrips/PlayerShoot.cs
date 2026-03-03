@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Fire()
     {
-        // 1) Where is the crosshair aiming? (camera center ray)
+        // Where is the crosshair aiming? (camera center ray)
         Ray camRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
         Vector3 aimPoint;
@@ -32,7 +32,7 @@ public class PlayerShoot : MonoBehaviour
         else
             aimPoint = camRay.GetPoint(maxAimDistance);
 
-        // 2) From the muzzle, do we have something blocking the barrel toward that aim point?
+        // From the muzzle, is there something blocking the barrel toward that aim point?
         Vector3 toAim = aimPoint - muzzle.position;
         float distToAim = toAim.magnitude;
         Vector3 dir = toAim / Mathf.Max(distToAim, 0.0001f);
@@ -44,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
             dir = (aimPoint - muzzle.position).normalized;
         }
 
-        // 3) Spawn + launch
+        // Spawn + launch
         GameObject bullet = Instantiate(bulletBallPrefab, muzzle.position, Quaternion.LookRotation(dir));
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
