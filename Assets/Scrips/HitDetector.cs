@@ -42,13 +42,4 @@ public class HitDetector : MonoBehaviour
             isRunning = false;
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //if(other.TryGetComponent(out EnemyHealth health))
-        {
-            //health.TakeDamage(25f);
-            //Destroy(gameObject);
-        }        
-    }
 }
