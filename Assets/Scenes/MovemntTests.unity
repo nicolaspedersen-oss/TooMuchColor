@@ -1287,6 +1287,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: slashDamage
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: slashOrigin
+      value: 
+      objectReference: {fileID: 71563933}
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: slashRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: enemyMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 257324849292949276, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1380,6 +1400,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+--- !u!4 &71563933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1202232420539539015, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+  m_PrefabInstance: {fileID: 71563932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &74029700
 Mesh:
   m_ObjectHideFlags: 0

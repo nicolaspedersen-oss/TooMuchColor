@@ -57,11 +57,11 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator DoDot(float dps, float duration)
     {
-        float t = 0f;
-        while (t < duration)
+        float time = 0f;
+        while (time < duration)
         {
             health.TakeDamage(dps * Time.deltaTime);
-            t += Time.deltaTime;
+            time += Time.deltaTime;
             yield return null;
         }
     }

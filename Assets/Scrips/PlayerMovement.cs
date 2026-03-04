@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         jumpReleasedThisFrame = Input.GetButtonUp("Jump");
         jumpHeld = Input.GetButton("Jump");
 
-        dashPressedThisFrame = Input.GetMouseButtonDown(1);
+        dashPressedThisFrame = Input.GetMouseButtonDown(3);
     }
 
     // State Layer (ground + timers + jump count reset)

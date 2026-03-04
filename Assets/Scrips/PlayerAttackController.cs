@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PlayerAttackController : MonoBehaviour
 {
@@ -25,20 +23,36 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
 
+    [Header("Secondary Slash")]
+    [SerializeField] private float slashDamage = 18f;
+    //[SerializeField] private float slashRange = 2.2f;
+    [SerializeField] private float slashRadius = 1.0f;
+    [SerializeField] private float slashCooldown = 0.35f;
+    [SerializeField] private LayerMask enemyMask = ~0;
+    [SerializeField] private Transform slashOrigin;
+    [SerializeField] private float slashForwardOffset = 1.2f;
+    [SerializeField] private bool slashUsesCurrentElement = false;
+
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
+    private float slashCooldownTimer;
     //private LineRenderer lineRenderer;
     //public Transform beamOrigin;
+    //private float slashAttack;
 
     private void Awake()
     {
         //lineRenderer = GetComponent<LineRenderer>();
         //lineRenderer.positionCount = 2;
+        //slashAttack = GetComponent<SlashAttack>();
     }
 
     void Update()
     {
-        // Elemental attacks
+        // cooldown timers
+        slashCooldownTimer -= Time.deltaTime;
+
+        // Elemental selection
         if (Input.GetKeyDown(KeyCode.Alpha1)) current = ElementType.Fire;
         if (Input.GetKeyDown(KeyCode.Alpha2)) current = ElementType.Water;
         if (Input.GetKeyDown(KeyCode.Alpha3)) current = ElementType.Lightning;
@@ -51,6 +65,64 @@ public class PlayerAttackController : MonoBehaviour
         else
         {
             if (Input.GetMouseButtonDown(0)) FireProjectile();
+        }
+
+        // Secondary slash
+        if (Input.GetMouseButtonDown(1))
+        {
+            TrySlash();
+        }
+    }
+
+    void TrySlash()
+    {
+        if (slashCooldownTimer > 0f) return;
+        slashCooldownTimer = slashCooldown;
+
+        Transform originT = slashOrigin != null ? slashOrigin : transform;
+
+        // Center of melee volume in front of the player
+        Vector3 center = originT.position + originT.forward * slashForwardOffset;
+
+        var triggerMode = QueryTriggerInteraction.Collide;
+
+        Collider[] hits = Physics.OverlapSphere(center, slashRadius, enemyMask, triggerMode);
+
+        // Build payload
+        AttackHit hitPayload;
+        if (slashUsesCurrentElement)
+        {
+            hitPayload = BuildHitForCurrentElement();
+            hitPayload.damage = slashDamage;
+        }
+        else
+        {
+            hitPayload = new AttackHit { damage = slashDamage, element = ElementType.Fire };
+        }
+        for (int i = 0; i < hits.Length; i++)
+        {
+            Collider c = hits[i];
+
+            Vector3 p = c.ClosestPoint(originT.position);
+            Vector3 to = p - originT.position;
+
+            Vector3 forward = Vector3.ProjectOnPlane(playerCamera.transform.forward, Vector3.up).normalized;
+            Vector3 toFlat = Vector3.ProjectOnPlane(to, Vector3.up);
+
+            float distFlat = toFlat.magnitude;
+            if (distFlat < 0.0001f) continue;
+
+            Vector3 dirFlat = toFlat / distFlat;
+            float dot = Vector3.Dot(forward, dirFlat);
+
+            // only "in front" check (OverlapSphere already handles reach)
+            if (dot < 0.2f) continue;
+
+            var enemyHealth = c.GetComponentInParent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(slashDamage);
+            }
         }
     }
 
@@ -171,4 +243,13 @@ public class PlayerAttackController : MonoBehaviour
 
         return new AttackHit { damage = 10f, element = current };
     }
+
+#if UNITY_EDITOR // Vissable Slash range 
+    private void OnDrawGizmosSelected()
+    {
+        Transform originT = slashOrigin != null ? slashOrigin : transform;
+        Vector3 center = originT.position + originT.forward * slashForwardOffset;
+        Gizmos.DrawWireSphere(center, slashRadius);
+    }
+#endif
 }
