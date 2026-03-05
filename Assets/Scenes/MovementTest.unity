@@ -8053,7 +8053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6811887601028407895, guid: a8ee46a50de4d9a4aaff758be4b057d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.51
+      value: 6.16
       objectReference: {fileID: 0}
     - target: {fileID: 6811887601028407895, guid: a8ee46a50de4d9a4aaff758be4b057d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9770,7 +9770,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 44f1f7aa7bafb62429ef6ab3d064d40d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1ed6da8aedac23f4a8688a9101d3a3bc, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &888849489
 Transform:
@@ -12217,7 +12217,7 @@ Transform:
   m_GameObject: {fileID: 1168320382}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0.4296833, y: -0.38000005, z: 60.785976}
+  m_LocalPosition: {x: -0.4296833, y: 0.26999956, z: 60.785976}
   m_LocalScale: {x: 1, y: 0.64475554, z: 0.349336}
   m_ConstrainProportionsScale: 0
   m_Children: []
