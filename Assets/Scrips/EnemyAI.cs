@@ -178,6 +178,6 @@ public class EnemyScript : MonoBehaviour
             health.TakeDamage(damage);
         }
 
-        //Debug.Log("Enemy attacks!");
+        Debug.Log("Enemy attacks!");
     }
 }
