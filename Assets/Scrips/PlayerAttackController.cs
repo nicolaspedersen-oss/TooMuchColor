@@ -68,7 +68,7 @@ public class PlayerAttackController : MonoBehaviour
         }
 
         // Secondary slash
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             TrySlash();
         }
