@@ -23,6 +23,7 @@ public class MenuManager : MonoBehaviour
             if (!Input.GetKeyDown(KeyCode.Escape))
             {
                 StartLevel();
+                //Debug.Log("Level Started");
             }
         }
 
@@ -62,6 +63,7 @@ public class MenuManager : MonoBehaviour
         levelStarted = true;
         Time.timeScale = 1f;
         startPromptPanel.SetActive(false);
+        //Debug.Log("Start prompt false");
     }
 
     public void ResumeGame()

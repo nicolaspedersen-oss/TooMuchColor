@@ -300,13 +300,13 @@ GameObject:
   - component: {fileID: 3053113669227609973}
   - component: {fileID: 9038059922682205034}
   - component: {fileID: 8258840223862971036}
-  - component: {fileID: 4066298887443796143}
   - component: {fileID: 4719684400154393948}
   - component: {fileID: 6411364406825895884}
+  - component: {fileID: -355386121082479310}
   - component: {fileID: -2411355897316107355}
   - component: {fileID: -4059768149643598103}
   - component: {fileID: 1912178151796072802}
-  - component: {fileID: -355386121082479310}
+  - component: {fileID: 4066298887443796143}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -409,20 +409,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4066298887443796143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5024451427290266160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812ac3c46c835d0428a149e7ca776c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crosshairTexture: {fileID: 2800000, guid: bae56595228f4e94eb2aa2213a4b4ed7, type: 3}
-  size: 35
 --- !u!114 &4719684400154393948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +451,46 @@ MonoBehaviour:
   dashDuration: 0.15
   dashCooldown: 0.6
   maxDashes: 1
+  countText: {fileID: 0}
+--- !u!114 &-355386121082479310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024451427290266160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee823005884c86d46a2e459e9f85c8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 7216892535172827918}
+  playerCamera: {fileID: 1436874475645566813}
+  maxAimDistance: 200
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  fireProjectilePrefab: {fileID: 6184434488155519289, guid: abd746efd75a05d47b9f372c223bb717, type: 3}
+  waterProjectilePrefab: {fileID: 6184434488155519289, guid: 92b882f85b553cc45b9fde23b6051196, type: 3}
+  grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
+  muzzleVelocity: 200
+  usesGravity: 0
+  shootCooldown: 0.2
+  beamRange: 40
+  beamDamage: 15
+  beamTickRate: 12
+  slashDamage: 20
+  slashRadius: 2.5
+  slashCooldown: 0.35
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  slashOrigin: {fileID: 1202232420539539015}
+  slashForwardOffset: 1.2
+  slashUsesCurrentElement: 0
 --- !u!114 &-2411355897316107355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killY: -20
---- !u!114 &-355386121082479310
+--- !u!114 &4066298887443796143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,35 +537,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5024451427290266160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee823005884c86d46a2e459e9f85c8e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 812ac3c46c835d0428a149e7ca776c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muzzle: {fileID: 7216892535172827918}
-  playerCamera: {fileID: 1436874475645566813}
-  maxAimDistance: 200
-  aimMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  fireProjectilePrefab: {fileID: 6184434488155519289, guid: abd746efd75a05d47b9f372c223bb717, type: 3}
-  waterProjectilePrefab: {fileID: 6184434488155519289, guid: 92b882f85b553cc45b9fde23b6051196, type: 3}
-  grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
-  muzzleVelocity: 200
-  usesGravity: 0
-  beamRange: 40
-  beamDamage: 15
-  beamTickRate: 12
-  slashDamage: 1000
-  slashRadius: 2
-  slashCooldown: 0.35
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  slashOrigin: {fileID: 1202232420539539015}
-  slashForwardOffset: 1.2
-  slashUsesCurrentElement: 0
+  crosshairTexture: {fileID: 2800000, guid: bae56595228f4e94eb2aa2213a4b4ed7, type: 3}
+  size: 35
 --- !u!1 &6549412232954192851
 GameObject:
   m_ObjectHideFlags: 0
