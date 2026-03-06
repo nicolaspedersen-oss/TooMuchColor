@@ -1325,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.47
+      value: -17.1
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16603,6 +16603,10 @@ Transform:
   m_Father: {fileID: 1409348295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 34081abaf782339162ac2530cf849e2531ceaba2
 --- !u!1 &1687374839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16769,6 +16773,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 1687374839}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 --- !u!1001 &1665843230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16867,6 +16872,11 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da8024718fb54a4ea0d3852c99b09e4, type: 3}
 >>>>>>> parent of 78879e7 (Revert "Level 2")
+=======
+>>>>>>> parent of 904cb87 (Level 2)
+=======
+>>>>>>> parent of 904cb87 (Level 2)
+>>>>>>> 34081abaf782339162ac2530cf849e2531ceaba2
 --- !u!114 &1702578692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4372174485195795741, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}

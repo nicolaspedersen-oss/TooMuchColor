@@ -237,7 +237,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerCamera != null)
         {
-            playerCamera.localEulerAngles = new Vector3(pitch, 0f, 0f);
+            playerCamera.localEulerAngles = new Vector  3(pitch, 0f, 0f);
         }
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+
+            SetCountText();
+        }
+    }
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 }
