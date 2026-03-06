@@ -128,6 +128,12 @@ public class PlayerAttackController : MonoBehaviour
 
     void FireProjectile()
     {
+<<<<<<< HEAD
+=======
+        if (shootCooldownTimer > 0f) return;
+        shootCooldownTimer = shootCooldown;
+
+>>>>>>> parent of c2667dc (Level 2 + sound)
         Vector3 dir = GetAimDirection(out _);
 
         GameObject prefab = current switch
