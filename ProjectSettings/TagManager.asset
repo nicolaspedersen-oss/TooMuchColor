@@ -10,7 +10,6 @@ TagManager:
   - Green
   - Yellow
   - Enemy
-  - PickUp
   layers:
   - Default
   - TransparentFX
