@@ -674,6 +674,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a448a23578392ce4682d52bfdc357853, type: 3}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> parent of 6e31af7 (-)
 --- !u!1 &26386380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4094820992189333752, guid: a448a23578392ce4682d52bfdc357853, type: 3}
@@ -748,7 +753,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac0c1bd9ddc8c443ae08a6d0b80abbf, type: 3}
+<<<<<<< HEAD
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of 6e31af7 (-)
 --- !u!43 &49190592
 Mesh:
   m_ObjectHideFlags: 0
@@ -9997,7 +10009,12 @@ Mesh:
     path: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> parent of 6e31af7 (-)
 --- !u!1001 &645946150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10089,7 +10106,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
+<<<<<<< HEAD
 >>>>>>> parent of 60d3fa7 (PickUp)
+=======
+=======
+>>>>>>> Stashed changes
+--- !u!1 &659284758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4094820992189333752, guid: a448a23578392ce4682d52bfdc357853, type: 3}
+  m_PrefabInstance: {fileID: 26386379}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of 6e31af7 (-)
 --- !u!43 &673257096
 Mesh:
   m_ObjectHideFlags: 0
@@ -39203,6 +39234,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+--- !u!4 &2111392715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1054329259130750322, guid: ce350acbeed68a34db38eaf0551ea452, type: 3}
+  m_PrefabInstance: {fileID: 281785133}
+  m_PrefabAsset: {fileID: 0}
+=======
+=======
+>>>>>>> Stashed changes
+--- !u!114 &2113438095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2813315409408832792, guid: bc5c8cc34528342418a4a8cecbeb017d, type: 3}
+  m_PrefabInstance: {fileID: 2006535812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of 6e31af7 (-)
 --- !u!1 &2116453250
 GameObject:
   m_ObjectHideFlags: 0
@@ -39570,7 +39629,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
+<<<<<<< HEAD
     m_AddedGameObjects: []
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8445158724489118405, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 665987292}
+    - targetCorrespondingSourceObject: {fileID: 8445158724489118405, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 829994525}
+=======
+    m_AddedGameObjects: []
+>>>>>>> Stashed changes
+=======
+    m_AddedGameObjects: []
+>>>>>>> Stashed changes
+>>>>>>> parent of 6e31af7 (-)
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
 --- !u!1001 &6909862684190017851
@@ -39665,6 +39742,11 @@ SceneRoots:
 <<<<<<< HEAD
 =======
   - {fileID: 2091936879}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> parent of 6e31af7 (-)
   - {fileID: 266362489}
   - {fileID: 1027984447}
   - {fileID: 113543138}
@@ -39698,6 +39780,7 @@ SceneRoots:
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
+<<<<<<< HEAD
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -39705,3 +39788,7 @@ SceneRoots:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of 60d3fa7 (PickUp)
+=======
+  - {fileID: 2006535812}
+>>>>>>> Stashed changes
+>>>>>>> parent of 6e31af7 (-)
