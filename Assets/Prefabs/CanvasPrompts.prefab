@@ -17,6 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Prefabs/StartPromptCanvas.prefab
   m_IsActive: 0
 --- !u!224 &9120984988106614126
@@ -24,6 +25,10 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &6302579981509174430
 >>>>>>> Stashed changes:Assets/Prefabs/CanvasPrompts.prefab
+=======
+  m_IsActive: 1
+--- !u!224 &6302579981509174430
+>>>>>>> Stashed changes
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
