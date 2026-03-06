@@ -16574,6 +16574,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1409348295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1687374839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16739,6 +16740,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687374839}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 904cb87 (Level 2)
 --- !u!114 &1702578692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4372174485195795741, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
