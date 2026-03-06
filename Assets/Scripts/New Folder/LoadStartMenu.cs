@@ -5,7 +5,7 @@ public class LoadStartMenue : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if ((Input.GetKey(KeyCode.LeftShift)) && Input.GetKeyDown(KeyCode.Escape))
         {
             LoadStartLevel();
         }
