@@ -2936,6 +2936,9 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -3189,6 +3192,9 @@ PrefabInstance:
       value: 363.2072
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -3201,7 +3207,11 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 8.488143
+=======
+      value: -64
+>>>>>>> parent of c2667dc (Level 2 + sound)
 =======
       value: -64
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -3221,7 +3231,11 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 9.4900675
+=======
+      value: -584.95306
+>>>>>>> parent of c2667dc (Level 2 + sound)
 =======
       value: -584.95306
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -5802,6 +5816,9 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -7084,6 +7101,9 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -22822,6 +22842,9 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -25754,6 +25777,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: fireSound
@@ -25775,6 +25799,8 @@ PrefabInstance:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of 904cb87 (Level 2)
+=======
+>>>>>>> parent of c2667dc (Level 2 + sound)
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.77
@@ -29063,6 +29089,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 948845945}
   - {fileID: 349901712}
   - {fileID: 1642427569}
@@ -29079,6 +29106,8 @@ Transform:
   - {fileID: 1341878016}
   - {fileID: 145815939}
 >>>>>>> parent of 904cb87 (Level 2)
+=======
+>>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
@@ -39273,11 +39302,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &2117182929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3681480382346340159, guid: 156fa266bf990364a807f84c5530a5ca, type: 3}
   m_PrefabInstance: {fileID: 273499377}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
@@ -39645,6 +39677,9 @@ SceneRoots:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c2667dc (Level 2 + sound)
+=======
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
