@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class PlayerAttackController : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip fireSound;
+    [SerializeField] private AudioClip waterSound;
+    [SerializeField] private AudioClip grassSound;
+    [SerializeField] private AudioClip lightningSound;
+
     [Header("Referances")]
     [SerializeField] private Transform muzzle;
     [SerializeField] private Camera playerCamera;
@@ -133,6 +140,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         if (shootCooldownTimer > 0f) return;
         shootCooldownTimer = shootCooldown;
+        PlayShootSound();
 
         Vector3 dir = GetAimDirection(out _);
 
@@ -168,6 +176,7 @@ public class PlayerAttackController : MonoBehaviour
         beamTickTimer -= Time.deltaTime;
         if (beamTickTimer > 0f) return;
         beamTickTimer = 1f / beamTickRate;
+        PlayShootSound();
 
         Vector3 dir = GetAimDirection(out RaycastHit hitInfo);
 
@@ -257,5 +266,22 @@ public class PlayerAttackController : MonoBehaviour
         Vector3 center = originT.position + originT.forward * slashForwardOffset;
         Gizmos.DrawWireSphere(center, slashRadius);
     }
+    void PlayShootSound()
+    {
+        if (audioSource == null) return;
+
+        AudioClip clip = current switch
+        {
+            ElementType.Fire => fireSound,
+            ElementType.Water => waterSound,
+            ElementType.Grass => grassSound,
+            ElementType.Lightning => lightningSound,
+            _ => null
+        };
+
+        if (clip != null)
+            audioSource.PlayOneShot(clip);
+    }
+
 #endif
 }
