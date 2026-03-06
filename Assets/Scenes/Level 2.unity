@@ -678,6 +678,9 @@ PrefabInstance:
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 >>>>>>> parent of 6e31af7 (-)
 --- !u!1 &26386380 stripped
 GameObject:
@@ -760,6 +763,9 @@ PrefabInstance:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 >>>>>>> parent of 6e31af7 (-)
 --- !u!43 &49190592
 Mesh:
@@ -10014,6 +10020,9 @@ Mesh:
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 >>>>>>> parent of 6e31af7 (-)
 --- !u!1001 &645946150
 PrefabInstance:
@@ -10109,7 +10118,10 @@ MonoBehaviour:
 <<<<<<< HEAD
 >>>>>>> parent of 60d3fa7 (PickUp)
 =======
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 6e31af7 (-)
 >>>>>>> Stashed changes
 --- !u!1 &659284758 stripped
 GameObject:
@@ -39237,7 +39249,6 @@ Transform:
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!4 &2111392715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1054329259130750322, guid: ce350acbeed68a34db38eaf0551ea452, type: 3}
@@ -39633,7 +39644,6 @@ PrefabInstance:
     m_AddedGameObjects: []
 =======
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8445158724489118405, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
       insertIndex: -1
@@ -39647,6 +39657,9 @@ PrefabInstance:
 =======
     m_AddedGameObjects: []
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 >>>>>>> parent of 6e31af7 (-)
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f07a986debd6cd6419be97a9a57092e8, type: 3}
@@ -39746,6 +39759,9 @@ SceneRoots:
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 >>>>>>> parent of 6e31af7 (-)
   - {fileID: 266362489}
   - {fileID: 1027984447}
@@ -39788,6 +39804,12 @@ SceneRoots:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of 60d3fa7 (PickUp)
+=======
+  - {fileID: 2006535812}
+>>>>>>> Stashed changes
+<<<<<<< HEAD
+>>>>>>> parent of 6e31af7 (-)
+=======
 =======
   - {fileID: 2006535812}
 >>>>>>> Stashed changes
