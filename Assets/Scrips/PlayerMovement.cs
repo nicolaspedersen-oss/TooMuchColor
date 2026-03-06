@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -32,10 +31,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashCooldown = 0.6f;
     [SerializeField] private int maxDashes = 1;
 
-    private Rigidbody rb;
-    private int count;
-    public TextMeshProUGUI countText;
-
     private CharacterController controller;
 
     // Input Layer
@@ -64,10 +59,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        count = 0;
-
-        SetCountText();
         controller = GetComponent<CharacterController>();
 
         dashesRemaining = maxDashes;
@@ -235,10 +226,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = horizontal + Vector3.up * verticalVelocity;
         controller.Move(velocity * Time.deltaTime);
     }
-    void SetCountText()
-    {
-        countText.text = "Coins: " + count.ToString();
-    }
 
     // Camera Look
     private void UpdateLook()
@@ -252,17 +239,5 @@ public class PlayerMovement : MonoBehaviour
         {
             playerCamera.localEulerAngles = new Vector3(pitch, 0f, 0f);
         }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            SetCountText();
-        }
-
-
     }
 }
