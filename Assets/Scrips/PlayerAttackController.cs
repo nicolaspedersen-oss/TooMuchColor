@@ -17,6 +17,7 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private GameObject grassProjectilePrefab;
     [SerializeField] private float muzzleVelocity = 200f;
     [SerializeField] private bool usesGravity = false;
+    [SerializeField] private float shootCooldown = 0.2f;
 
     [Header("Lightning Beam")]
     [SerializeField] private float beamRange = 40f;
@@ -36,6 +37,7 @@ public class PlayerAttackController : MonoBehaviour
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
     private float slashCooldownTimer;
+    private float shootCooldownTimer;
     //private LineRenderer lineRenderer;
     //public Transform beamOrigin;
     //private float slashAttack;
@@ -51,6 +53,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         // cooldown timers
         slashCooldownTimer -= Time.deltaTime;
+        shootCooldownTimer -= Time.deltaTime;
 
         // Elemental selection
         if (Input.GetKeyDown(KeyCode.Alpha1)) current = ElementType.Fire;
@@ -64,7 +67,7 @@ public class PlayerAttackController : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0)) FireProjectile();
+            if (Input.GetMouseButton(0)) FireProjectile();
         }
 
         // Secondary slash
@@ -101,9 +104,9 @@ public class PlayerAttackController : MonoBehaviour
         }
         for (int i = 0; i < hits.Length; i++)
         {
-            Collider c = hits[i];
+            Collider collider = hits[i];
 
-            Vector3 p = c.ClosestPoint(originT.position);
+            Vector3 p = collider.ClosestPoint(originT.position);
             Vector3 to = p - originT.position;
 
             Vector3 forward = Vector3.ProjectOnPlane(playerCamera.transform.forward, Vector3.up).normalized;
@@ -118,7 +121,7 @@ public class PlayerAttackController : MonoBehaviour
             // only "in front" check (OverlapSphere already handles reach)
             if (dot < 0.2f) continue;
 
-            var enemyHealth = c.GetComponentInParent<EnemyHealth>();
+            var enemyHealth = collider.GetComponentInParent<EnemyHealth>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(slashDamage);
@@ -128,6 +131,9 @@ public class PlayerAttackController : MonoBehaviour
 
     void FireProjectile()
     {
+        if (shootCooldownTimer > 0f) return;
+        shootCooldownTimer = shootCooldown;
+
         Vector3 dir = GetAimDirection(out _);
 
         GameObject prefab = current switch
