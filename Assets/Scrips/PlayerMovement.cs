@@ -241,6 +241,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     void OnTriggerEnter(Collider other)
     {
@@ -253,4 +254,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 }

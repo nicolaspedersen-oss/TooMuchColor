@@ -3355,6 +3355,7 @@ PrefabInstance:
       addedObject: {fileID: 324139579}
   m_SourcePrefab: {fileID: 100100000, guid: ffce903a7cc67c947bef67dfea1e5da1, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &314659585
 PrefabInstance:
@@ -3434,6 +3435,8 @@ Transform:
 >>>>>>> parent of 904cb87 (Level 2)
 =======
 >>>>>>> parent of 904cb87 (Level 2)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 --- !u!1001 &318912988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9993,6 +9996,7 @@ Mesh:
     size: 0
     path: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &645946150
 PrefabInstance:
@@ -10084,6 +10088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 --- !u!43 &673257096
 Mesh:
   m_ObjectHideFlags: 0
@@ -29065,6 +29071,7 @@ Transform:
   - {fileID: 1558987095}
   - {fileID: 1069255246}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - {fileID: 1143626823}
   - {fileID: 1937530427}
@@ -29116,6 +29123,8 @@ Transform:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1611296595 stripped
@@ -31371,6 +31380,7 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334dcdd0a24598e459abd81a7f543229, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &1707068980
 PrefabInstance:
@@ -31504,6 +31514,8 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5f1faf9e937b04409772a8f41ff2ac6, type: 3}
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 --- !u!1 &1733366220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7338349987002732951, guid: 11b4daab94d9a2246bb3a79c702bbfd1, type: 3}
@@ -37697,6 +37709,7 @@ Mesh:
     size: 0
     path: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &2073396447
 PrefabInstance:
@@ -38446,6 +38459,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 1689090026022003452}
   m_PrefabAsset: {fileID: 0}
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
 --- !u!43 &2087048931
 Mesh:
   m_ObjectHideFlags: 0
@@ -39647,6 +39662,7 @@ SceneRoots:
   - {fileID: 1385713231}
   - {fileID: 1017479496}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - {fileID: 2091936879}
   - {fileID: 266362489}
@@ -39687,3 +39703,5 @@ SceneRoots:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 60d3fa7 (PickUp)
