@@ -3416,6 +3416,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 426123832248976661, guid: 072a75a17fa7779498df2abb44cebbe6, type: 3}
   m_PrefabInstance: {fileID: 314659585}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 904cb87 (Level 2)
+=======
 >>>>>>> parent of 904cb87 (Level 2)
 --- !u!1001 &318912988
 PrefabInstance:
@@ -25760,6 +25763,7 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 36125836}
+<<<<<<< HEAD
 >>>>>>> parent of 904cb87 (Level 2)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
@@ -25769,6 +25773,8 @@ PrefabInstance:
 >>>>>>> parent of c2667dc (Level 2 + sound)
 =======
 >>>>>>> parent of c2667dc (Level 2 + sound)
+=======
+>>>>>>> parent of 904cb87 (Level 2)
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.77
