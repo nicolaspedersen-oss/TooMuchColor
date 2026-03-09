@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerAttackController : MonoBehaviour
@@ -23,6 +24,7 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float beamRange = 40f;
     [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
+    [SerializeField] private GameObject beamEffectPrefab;
 
     [Header("Secondary Slash")]
     [SerializeField] private float slashDamage = 18f;
@@ -169,23 +171,33 @@ public class PlayerAttackController : MonoBehaviour
         if (beamTickTimer > 0f) return;
         beamTickTimer = 1f / beamTickRate;
 
-        Vector3 dir = GetAimDirection(out RaycastHit hitInfo);
+        Vector3 dir = GetAimDirection(out _);
 
         // Lightning beam uses raycast
-        if (Physics.Raycast(muzzle.position, dir, out RaycastHit hit, beamRange, aimMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(muzzle.position, dir, out RaycastHit hitInfo, beamRange, aimMask, QueryTriggerInteraction.Ignore))
         {
-            if (hit.collider.TryGetComponent(out EnemyHealth enemy))
-                enemy.TakeDamage(beamDamage);
-
-            if (hit.collider.TryGetComponent(out EnemyStatus status))
+            AttackHit h = new AttackHit
             {
-                var h = new AttackHit
+                damage = beamDamage,
+                element = ElementType.Lightning
+                // Stun effect. Chain lightning
+            };
+
+            var receiver = hitInfo.collider.GetComponentInParent<IHitReceiver>();
+            if (receiver != null)
+            {
+                receiver.ReceiveHit(h, hitInfo.point, gameObject);
+            }
+            else
+            {
+                if (hitInfo.collider.TryGetComponent(out EnemyHealth enemy))
                 {
-                    damage = 0f,
-                    element = ElementType.Lightning
-                    // stun effect, chain lightning
-                };
-                status.ApplyHit(h);
+                    enemy.TakeDamage(beamDamage);
+                }
+                if (hitInfo.collider.TryGetComponent(out EnemyStatus status))
+                {
+                    status.ApplyHit(h);
+                }
             }
         }
     }

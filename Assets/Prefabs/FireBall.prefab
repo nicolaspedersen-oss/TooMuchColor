@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 258209676712651334}
   - component: {fileID: 21519590579393937}
   - component: {fileID: -9145692490323515383}
-  - component: {fileID: 423747190088035734}
   - component: {fileID: -5659552846698749378}
   m_Layer: 0
   m_Name: FireBall
@@ -138,21 +137,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &423747190088035734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6184434488155519289}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa412d2d4cbd9c4eaaa8ce16dc4e656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 25
-  lifeTime: 5
-  obstaclePrefab: {fileID: 0}
 --- !u!114 &-5659552846698749378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  destroyOnHit: 1
   hit:
     damage: 0
     element: 0
@@ -173,3 +161,4 @@ MonoBehaviour:
     dotDuration: 0
     slowPercent: 0
     slowDuration: 0
+    rootDuration: 0
