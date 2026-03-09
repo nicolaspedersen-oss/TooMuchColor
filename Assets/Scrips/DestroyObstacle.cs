@@ -1,25 +1,50 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class DestroyObstacle : MonoBehaviour
+public class DestroyObstacle : MonoBehaviour, IHitReceiver
 {
-    [SerializeField] private float damage = 25f;
-    [SerializeField] private float lifeTime = 5f;
-    [SerializeField] private GameObject obstaclePrefab;
+    [Header("Puzzle Rule")]
+    [SerializeField] private ElementType requiredElement;
+    [SerializeField] private int hitsToDestroy = 1;
+    //[SerializeField] private bool consumeHitOnlyIfCorrect = true;
 
-    private void Start()
+    [Header("Feedback")]
+    [SerializeField] private GameObject correctVfx;
+    [SerializeField] private GameObject wrongVfx;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent onDestroyed;
+
+    private int remaning;
+
+    private void Awake()
     {
-        Destroy(gameObject, lifeTime);
+        remaning = hitsToDestroy;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void ReceiveHit(AttackHit hit, Vector3 hitpoint, GameObject instigator)
     {
-        if (other.CompareTag("Red"))
+        if (hit.element != requiredElement)
         {
-            TryGetComponent(out EnemyHealth obstacle);
-
-            obstacle.TakeDamage(damage);
+            if (wrongVfx)
+            {
+                Instantiate(wrongVfx, hitpoint, Quaternion.identity);
+            }
+            return;
         }
 
-        Destroy(gameObject);
+        if (correctVfx)
+        {
+            Instantiate(correctVfx, hitpoint, Quaternion.identity);
+        }
+
+        remaning -= 1;
+
+        if (remaning  <= 0)
+        {
+            onDestroyed?.Invoke();
+            Destroy(gameObject);
+        }
     }
 }
