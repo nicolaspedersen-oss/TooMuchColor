@@ -23,6 +23,7 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float beamRange = 40f;
     [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
+    [SerializeField] private GameObject beamEffectPrefab;
 
     [Header("Secondary Slash")]
     [SerializeField] private float slashDamage = 18f;
@@ -168,6 +169,7 @@ public class PlayerAttackController : MonoBehaviour
         beamTickTimer -= Time.deltaTime;
         if (beamTickTimer > 0f) return;
         beamTickTimer = 1f / beamTickRate;
+
 
         Vector3 dir = GetAimDirection(out RaycastHit hitInfo);
 
