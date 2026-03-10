@@ -181,6 +181,14 @@ MonoBehaviour:
   waterMultiplier: 1
   lightningMultiplier: 0.25
   grassMultiplier: 1
+  affinity: 2
+  sameElementNegatesDamage: 1
+  sameElementHealFactor: 0.5
+  maxHealthGainFactor: 0.25
+  maxHealthGainFlat: 0
+  maxMaxHealthMultiplier: 2
+  scalePerSameHit: 0.05
+  maxScaleMultiplier: 2
 --- !u!114 &7884882464588477677
 MonoBehaviour:
   m_ObjectHideFlags: 0
