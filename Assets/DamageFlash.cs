@@ -24,7 +24,6 @@ public class DamageFlash : MonoBehaviour
         }
         else
         {
-            // Ensure it stays fully invisible when not flashing
             Color c = flashImage.color;
             c.a = 0f;
             flashImage.color = c;
