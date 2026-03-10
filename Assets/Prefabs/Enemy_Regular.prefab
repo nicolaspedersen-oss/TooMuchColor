@@ -248,3 +248,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 4439690800649912766}
   status: {fileID: -4123064481795310059}
+  fireMultiplier: 1
+  waterMultiplier: 1
+  lightningMultiplier: 1
+  grassMultiplier: 1
+  affinity: 4
+  sameElementNegatesDamage: 1
+  sameElementHealFactor: 0.5
+  maxHealthGainFactor: 0.25
+  maxHealthGainFlat: 0
+  maxMaxHealthMultiplier: 2
+  scalePerSameHit: 0.05
+  maxScaleMultiplier: 2
