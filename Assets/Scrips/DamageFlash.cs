@@ -11,6 +11,8 @@ public class DamageFlash : MonoBehaviour
 
     private void Update()
     {
+        if (!flashImage) return;
+
         if (flashTimer > 0)
         {
             flashTimer -= Time.deltaTime;

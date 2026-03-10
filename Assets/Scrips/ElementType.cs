@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum ElementType { Fire, Water, Lightning, Grass }
+public enum ElementType { Fire, Water, Lightning, Grass, None }
 
 [System.Serializable]
 public struct AttackHit

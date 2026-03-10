@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 100f;
+    public float maxHealth = 100f;
     private float currentHealth;
 
-    private void Awake()
+    public void Awake()
     {
         currentHealth = maxHealth;
     }
@@ -17,6 +17,22 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0f)
             Die();
+    }
+    public void Heal(float amount) 
+    {
+        if (amount <= 0f) return;
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
+    public void AddMaxHealth(float amount, bool alsoHealByAmount = true)
+    {
+        if (amount <= 0f) return;
+
+        maxHealth += amount;
+
+        if (alsoHealByAmount)
+            currentHealth += amount;
+
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
     private void Die()
     {
