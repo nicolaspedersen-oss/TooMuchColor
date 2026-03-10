@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private Slider healthSlider;   // UI reference
+    [SerializeField] private Slider healthSlider;   
 
     private float currentHealth;
     private PlayerRespawn respawn;
