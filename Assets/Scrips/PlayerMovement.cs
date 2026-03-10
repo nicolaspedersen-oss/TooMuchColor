@@ -237,6 +237,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void SetCountText()
     {
+        if (!countText) return; // Checks if countText is assigned. if not, return
         countText.text = "Count: " + count.ToString();
     }
 
