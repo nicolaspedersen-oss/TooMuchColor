@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1079153658403720330}
   - component: {fileID: 2114258753308374478}
   - component: {fileID: 2587468260335420295}
-  - component: {fileID: 6579136124739951888}
+  - component: {fileID: 2342136323395618417}
   m_Layer: 0
   m_Name: NextLevelTrigger
   m_TagString: Untagged
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6579136124739951888
+--- !u!114 &2342136323395618417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6228936566001347087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421f2d79c2841b646a7ed5b51ded985c, type: 3}
+  m_Script: {fileID: 11500000, guid: e06bcedbc64f19f439a53664f902e24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
