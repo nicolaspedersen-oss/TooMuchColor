@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     private float currentHealth;
     private PlayerRespawn respawn;
 
+    [SerializeField] private DamageFlash damageFlash;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -30,6 +32,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (healthSlider != null)
             healthSlider.value = currentHealth;
+
+        if (damageFlash != null)
+            damageFlash.TriggerFlash();
 
         if (currentHealth <= 0f)
             Die();
