@@ -37,6 +37,7 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         isMenuOpen = !isMenuOpen;
+        if (!mainMenuPanel) return;
         mainMenuPanel.SetActive(isMenuOpen);
 
         // Pause or resume game
@@ -59,6 +60,8 @@ public class MenuManager : MonoBehaviour
 
     private void StartLevel()
     {
+        if (!startPromptPanel) return;
+
         levelStarted = true;
         Time.timeScale = 1f;
         startPromptPanel.SetActive(false);

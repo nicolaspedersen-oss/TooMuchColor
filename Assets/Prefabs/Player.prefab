@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthSlider: {fileID: 0}
+  damageFlash: {fileID: 0}
 --- !u!114 &6411364406825895884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +466,7 @@ MonoBehaviour:
   dashDuration: 0.15
   dashCooldown: 0.6
   maxDashes: 1
+  countText: {fileID: 0}
 --- !u!114 &-2411355897316107355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7585b698103d8874daa509cc6fb41bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killY: -20
+  killY: -100
 --- !u!114 &-355386121082479310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,9 +530,11 @@ MonoBehaviour:
   grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
   muzzleVelocity: 200
   usesGravity: 0
+  shootCooldown: 0.2
   beamRange: 40
   beamDamage: 15
   beamTickRate: 12
+  beamEffectPrefab: {fileID: 0}
   slashDamage: 1000
   slashRadius: 2
   slashCooldown: 0.35
