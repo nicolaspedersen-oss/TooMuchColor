@@ -209,9 +209,17 @@ MonoBehaviour:
   health: {fileID: 4931261209030948567}
   status: {fileID: 4317887464331090823}
   fireMultiplier: 0.25
-  waterMultiplier: 1
+  waterMultiplier: 1.5
   lightningMultiplier: 1
   grassMultiplier: 1
+  affinity: 0
+  sameElementNegatesDamage: 1
+  sameElementHealFactor: 0.5
+  maxHealthGainFactor: 0.25
+  maxHealthGainFlat: 0
+  maxMaxHealthMultiplier: 2
+  scalePerSameHit: 0.05
+  maxScaleMultiplier: 2
 --- !u!114 &4931261209030948567
 MonoBehaviour:
   m_ObjectHideFlags: 0

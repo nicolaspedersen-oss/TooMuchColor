@@ -180,7 +180,7 @@ MonoBehaviour:
   fireMultiplier: 1
   waterMultiplier: 1
   lightningMultiplier: 0.25
-  grassMultiplier: 1
+  grassMultiplier: 1.5
   affinity: 2
   sameElementNegatesDamage: 1
   sameElementHealFactor: 0.5
