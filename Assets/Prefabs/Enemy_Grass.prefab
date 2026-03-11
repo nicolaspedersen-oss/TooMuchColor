@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 7650205194469030331}
   status: {fileID: 7533770198493354478}
-  fireMultiplier: 1
+  fireMultiplier: 1.5
   waterMultiplier: 1
   lightningMultiplier: 1
   grassMultiplier: 0.25

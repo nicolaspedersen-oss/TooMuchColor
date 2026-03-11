@@ -179,7 +179,7 @@ MonoBehaviour:
   status: {fileID: 3760180553468475210}
   fireMultiplier: 1
   waterMultiplier: 0.25
-  lightningMultiplier: 1
+  lightningMultiplier: 1.5
   grassMultiplier: 1
   affinity: 1
   sameElementNegatesDamage: 1
