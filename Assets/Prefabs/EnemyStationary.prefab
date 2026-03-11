@@ -45,9 +45,8 @@ GameObject:
   - component: {fileID: 3342669875122576937}
   - component: {fileID: 6046465568513579995}
   - component: {fileID: 5288811462238920420}
-  - component: {fileID: 8690561114715601181}
+  - component: {fileID: -1166566192556746092}
   - component: {fileID: 4371581343712230391}
-  - component: {fileID: 3082829815259064321}
   - component: {fileID: 4072628414296216856}
   m_Layer: 0
   m_Name: EnemyStationary
@@ -188,7 +187,7 @@ MonoBehaviour:
   shootingRange: 40
   fireRate: 1
   bulletSpeed: 20
---- !u!114 &8690561114715601181
+--- !u!114 &-1166566192556746092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 4371581343712230391}
-  status: {fileID: 3082829815259064321}
+  status: {fileID: 0}
   fireMultiplier: 1
   waterMultiplier: 1
   lightningMultiplier: 1
@@ -227,20 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
---- !u!114 &3082829815259064321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8827996389308354521}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a7f32f8a865804fa7603c3e8716107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 4371581343712230391}
-  ai: {fileID: 0}
 --- !u!114 &4072628414296216856
 MonoBehaviour:
   m_ObjectHideFlags: 0

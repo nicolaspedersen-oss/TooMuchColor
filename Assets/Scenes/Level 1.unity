@@ -2128,9 +2128,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3082829815259064321, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
+    - target: {fileID: -1166566192556746092, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
+      propertyPath: affinity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5288811462238920420, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
       propertyPath: shootingRange
@@ -2180,7 +2184,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyStationary
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3949,6 +3954,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1166566192556746092, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
+      propertyPath: affinity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5288811462238920420, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
       propertyPath: shootingRange
       value: 60
@@ -3997,7 +4010,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyStationary (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7161,6 +7175,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1166566192556746092, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
+      propertyPath: affinity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5288811462238920420, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
       propertyPath: shootingRange
       value: 60
@@ -7209,7 +7231,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyStationary (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10967,6 +10990,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1166566192556746092, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
+      propertyPath: affinity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7768224455085771480, guid: 3a32bb17e064bed46a68e560e55d9639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 211.03
@@ -11011,7 +11042,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyStationary (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11409,6 +11441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2366982390137171673, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
+      propertyPath: affinity
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3998489480410854382, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 191.96487
