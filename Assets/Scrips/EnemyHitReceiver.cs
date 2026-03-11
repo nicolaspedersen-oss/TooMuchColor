@@ -76,7 +76,6 @@ public class EnemyHitReceiver : MonoBehaviour, IHitReceiver
             health.TakeDamage(hit.damage * multiplier);
         }
 
-        if (!status) return;
         if (status != null)
         {
             AttackHit modified = hit;
