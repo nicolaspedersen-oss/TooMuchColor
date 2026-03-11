@@ -240,7 +240,6 @@ public class PlayerMovement : MonoBehaviour
         if (!countText) return; // Checks if countText is assigned. if not, return
         countText.text = "Count: " + count.ToString();
     }
-
     // Camera Look
     private void UpdateLook()
     {
@@ -254,6 +253,14 @@ public class PlayerMovement : MonoBehaviour
             playerCamera.localEulerAngles = new Vector3(pitch, 0f, 0f);
         }
     }
+    public void Launch(float force)
+    {
+        verticalVelocity = force;
+
+        // reset fall speed and allow jumps after launch
+        jumpsUsed = 0;
+        coyoteTimer = 0f;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
@@ -262,6 +269,7 @@ public class PlayerMovement : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+
         }
     }
 }
