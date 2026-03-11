@@ -9542,7 +9542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 5
   patrolPoints:
   - {fileID: 243021764}
   - {fileID: 133087566}
