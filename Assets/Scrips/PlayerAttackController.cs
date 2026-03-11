@@ -43,6 +43,9 @@ public class PlayerAttackController : MonoBehaviour
     //public Transform beamOrigin;
     //private float slashAttack;
 
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+
     private void Awake()
     {
         //lineRenderer = GetComponent<LineRenderer>();
@@ -132,6 +135,7 @@ public class PlayerAttackController : MonoBehaviour
 
     void FireProjectile()
     {
+        audioSource.PlayOneShot(shootSound);
         if (shootCooldownTimer > 0f) return;
         shootCooldownTimer = shootCooldown;
 
@@ -165,6 +169,7 @@ public class PlayerAttackController : MonoBehaviour
 
     void FireBeam()
     {
+        audioSource.PlayOneShot(shootSound);
         // tick-based so holding mouse does steady damage
         beamTickTimer -= Time.deltaTime;
         if (beamTickTimer > 0f) return;
