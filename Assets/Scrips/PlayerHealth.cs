@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
     }
 
-    private void Die()
+    public void Die()
     {
         respawn.Respawn();
         currentHealth = maxHealth;

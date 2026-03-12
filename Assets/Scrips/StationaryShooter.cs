@@ -1,7 +1,11 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class StationaryShooter3D : MonoBehaviour
 {
+    [Header("Gravity")]
+    [SerializeField] private float gravity = -50f;
+
     public Transform player;
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -12,14 +16,21 @@ public class StationaryShooter3D : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    private float verticalVelocity;
+    //private bool isGrounded = false;
+    private CharacterController controller;
+
     void Start()
     {
+        controller = GetComponent<CharacterController>();
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
+        ApplyGravity();
+
         if (player == null) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
@@ -37,6 +48,17 @@ public class StationaryShooter3D : MonoBehaviour
                 nextFireTime = Time.time + 1f / fireRate;
             }
         }
+    }
+
+    private void ApplyGravity()
+    {
+        if (controller.isGrounded && verticalVelocity < 0f)
+        {
+            verticalVelocity = -2f;
+        }
+
+        verticalVelocity += gravity * Time.deltaTime;
+        controller.Move(new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
     }
 
     bool HasLineOfSight()
