@@ -538,7 +538,7 @@ MonoBehaviour:
   beamDamage: 15
   beamTickRate: 12
   beamEffectPrefab: {fileID: 3076486913784087032}
-  slashDamage: 1000
+  slashDamage: 35
   slashRadius: 2
   slashCooldown: 0.35
   enemyMask:

@@ -3,13 +3,13 @@ using UnityEngine;
 public class FallRespawn : MonoBehaviour
 {
     public float killY = -20f;
-    private PlayerRespawn respawn;
+    private PlayerHealth die;
 
-    private void Awake() => respawn = GetComponent<PlayerRespawn>();
+    private void Awake() => die = GetComponent<PlayerHealth>();
 
     private void Update()
     {
         if (transform.position.y < killY)
-            respawn.Respawn();
+            die.Die();
     }
 }

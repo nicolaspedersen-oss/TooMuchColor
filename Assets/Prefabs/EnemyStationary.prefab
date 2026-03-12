@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: -1166566192556746092}
   - component: {fileID: 4371581343712230391}
   - component: {fileID: 4072628414296216856}
+  - component: {fileID: -328091992864323131}
   m_Layer: 0
   m_Name: EnemyStationary
   m_TagString: Untagged
@@ -163,7 +164,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -181,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c578aa7aaacf564691ae03080836256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravity: -50
   player: {fileID: 0}
   firePoint: {fileID: 4383493024220812846}
   bulletPrefab: {fileID: 8604138081094032987, guid: cf5551726fd3401428f5c0268a00cd65, type: 3}
@@ -239,3 +241,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.2
+--- !u!143 &-328091992864323131
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827996389308354521}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
