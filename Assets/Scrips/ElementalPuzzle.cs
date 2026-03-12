@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Extinguisha : MonoBehaviour, IHitReceiver
+public class ElementalPuzzle : MonoBehaviour, IHitReceiver
 {
     [Header("Rule")]
     [SerializeField] private ElementType requiredElement = ElementType.Water;

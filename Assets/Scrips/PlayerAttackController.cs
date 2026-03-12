@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class PlayerAttackController : MonoBehaviour
 {
@@ -23,7 +24,8 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float beamRange = 40f;
     [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
-    [SerializeField] private GameObject beamEffectPrefab;
+    //[SerializeField] private GameObject beamEffectPrefab;
+    [SerializeField] private ParticleSystem beamEffectPrefab;
 
     [Header("Secondary Slash")]
     [SerializeField] private float slashDamage = 18f;
@@ -39,6 +41,7 @@ public class PlayerAttackController : MonoBehaviour
     private float beamTickTimer;
     private float slashCooldownTimer;
     private float shootCooldownTimer;
+    //private ParticleSystem particalSystem;
     //private LineRenderer lineRenderer;
     //public Transform beamOrigin;
     //private float slashAttack;
@@ -51,6 +54,7 @@ public class PlayerAttackController : MonoBehaviour
         //lineRenderer = GetComponent<LineRenderer>();
         //lineRenderer.positionCount = 2;
         //slashAttack = GetComponent<SlashAttack>();
+        //particalSystem = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -169,6 +173,7 @@ public class PlayerAttackController : MonoBehaviour
 
     void FireBeam()
     {
+        beamEffectPrefab.Play();
         audioSource.PlayOneShot(shootSound);
         // tick-based so holding mouse does steady damage
         beamTickTimer -= Time.deltaTime;
@@ -178,7 +183,7 @@ public class PlayerAttackController : MonoBehaviour
         Vector3 dir = GetAimDirection(out _);
 
         // Lightning beam uses raycast
-        if (Physics.Raycast(muzzle.position, dir, out RaycastHit hitInfo, beamRange, aimMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(muzzle.position, dir, out RaycastHit hitInfo, beamRange, aimMask)) // QueryTriggerInteraction.Ignore
         {
             AttackHit h = new AttackHit
             {
@@ -204,6 +209,7 @@ public class PlayerAttackController : MonoBehaviour
                 }
             }
         }
+        
     }
 
     Vector3 GetAimDirection(out RaycastHit camHit)

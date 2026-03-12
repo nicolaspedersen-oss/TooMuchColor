@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class RaisePlatform : MonoBehaviour
 {
-    [SerializeField] private Transform platform;      // the moving part
-    [SerializeField] private float raiseHeight = 4f;  // how far up
-    [SerializeField] private float raiseTime = 1.2f;  // seconds
+    [SerializeField] private Transform platform;      // the moving platform
+    [SerializeField] private float raiseHeight = 4f;  // how far up it moves
+    [SerializeField] private float raiseTime = 1.2f;  // seconds it takes to move
     [SerializeField] private AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     Vector3 startPos;
