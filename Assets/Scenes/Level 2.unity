@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Tree Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.z
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22376,7 +22380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1157523834866314124, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.832796
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1157523834866314124, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22417,6 +22421,18 @@ PrefabInstance:
     - target: {fileID: 2759299280108247455, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_Name
       value: Obstacle_Tree Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.x
+      value: 3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.z
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22827,6 +22843,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!198 &816555934 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3076486913784087032, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+  m_PrefabInstance: {fileID: 1451035223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &825311588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40721,7 +40742,7 @@ PrefabInstance:
     - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: beamEffectPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 816555934}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.77
@@ -63555,7 +63576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1157523834866314124, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6910105
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 1157523834866314124, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -63596,6 +63617,14 @@ PrefabInstance:
     - target: {fileID: 2759299280108247455, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: m_Name
       value: Obstacle_Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.y
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906646587609086784, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
+      propertyPath: m_Size.z
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4501301784941555011, guid: e9e3ea7b994d0ed45b5a8db1ce357bcb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
