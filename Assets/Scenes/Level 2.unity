@@ -40715,6 +40715,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1959063847}
     - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: muzzleVelocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -355386121082479310, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: beamEffectPrefab
       value: 
       objectReference: {fileID: 0}
