@@ -287,7 +287,7 @@ public class PlayerMovement3 : MonoBehaviour
     void SetCountText()
     {
         if (!countText) return;
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Coins found: " + count.ToString() + "/11";
     }
 
     // Camera Look

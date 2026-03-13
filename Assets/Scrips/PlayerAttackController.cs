@@ -243,18 +243,18 @@ public class PlayerAttackController : MonoBehaviour
             case ElementType.Fire:
                 return new AttackHit
                 {
-                    damage = 20f,
+                    damage = 35f,
                     element = ElementType.Fire,
-                    dotDps = 6f,
+                    dotDps = 10f,
                     dotDuration = 5f
                 };
 
             case ElementType.Water:
                 return new AttackHit
                 {
-                    damage = 15f,
+                    damage = 25f,
                     element = ElementType.Water,
-                    slowPercent = 0.35f,
+                    slowPercent = 0.5f,
                     slowDuration = 2.5f
                     // Knockback effect + Slow
                 };
@@ -262,14 +262,14 @@ public class PlayerAttackController : MonoBehaviour
             case ElementType.Grass:
                 return new AttackHit
                 {
-                    damage = 12f,
+                    damage = 20f,
                     element = ElementType.Grass,
                     rootDuration = 2f
                     // poison, root, lifesteal
                 };
         }
 
-        return new AttackHit { damage = 10f, element = current };
+        return new AttackHit { damage = 15f, element = current };
     }
 
 #if UNITY_EDITOR // Vissable Slash range 
