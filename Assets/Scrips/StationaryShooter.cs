@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class StationaryShooter3D : MonoBehaviour
