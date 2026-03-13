@@ -438,8 +438,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065f62ee683560542afe7af680ad4500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   healthSlider: {fileID: 0}
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 0}
+  hitSoundCooldown: 0.2
   damageFlash: {fileID: 0}
 --- !u!114 &6411364406825895884
 MonoBehaviour:
@@ -521,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzle: {fileID: 7216892535172827918}
   playerCamera: {fileID: 1436874475645566813}
-  maxAimDistance: 200
+  maxAimDistance: 100
   aimMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -531,8 +534,8 @@ MonoBehaviour:
   fireProjectilePrefab: {fileID: 6184434488155519289, guid: abd746efd75a05d47b9f372c223bb717, type: 3}
   waterProjectilePrefab: {fileID: 6184434488155519289, guid: 92b882f85b553cc45b9fde23b6051196, type: 3}
   grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
-  muzzleVelocity: 200
-  usesGravity: 0
+  muzzleVelocity: 100
+  usesGravity: 1
   shootCooldown: 0.2
   beamRange: 40
   beamDamage: 15
