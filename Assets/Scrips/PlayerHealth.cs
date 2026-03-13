@@ -1,11 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private Slider healthSlider;   
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private float hitSoundCooldown = 0.2f;
 
+
+    private float lastHitSoundTime = -999f;
     private float currentHealth;
     private PlayerRespawn respawn;
 
@@ -35,6 +41,18 @@ public class PlayerHealth : MonoBehaviour
 
         if (damageFlash != null)
             damageFlash.TriggerFlash();
+
+        if (audioSource != null && hitSound != null)
+        {
+            if (Time.time >= lastHitSoundTime + hitSoundCooldown)
+            {
+                audioSource.pitch = Random.Range(0.9f, 1.1f);
+                audioSource.PlayOneShot(hitSound);
+                audioSource.pitch = 1f;
+
+                lastHitSoundTime = Time.time;
+            }
+        }
 
         if (currentHealth <= 0f)
             Die();
