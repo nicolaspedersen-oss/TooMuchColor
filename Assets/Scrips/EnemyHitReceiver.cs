@@ -1,6 +1,5 @@
 using Unity.Hierarchy;
 using UnityEditor;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class EnemyHitReceiver : MonoBehaviour, IHitReceiver

@@ -61,6 +61,8 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         respawn.Respawn();
+        respawn.RespawnPlatforms();
+
         currentHealth = maxHealth;
 
         if (healthSlider != null)

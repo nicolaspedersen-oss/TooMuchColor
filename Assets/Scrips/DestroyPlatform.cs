@@ -5,22 +5,39 @@ using UnityEngine;
 public class DesproyPlatform : MonoBehaviour
 {
     [SerializeField] private float destroyTimer = 2f;
+
+    private float timer;
     private bool timerIsRunning;
+
+    private void Awake()
+    {
+        timer = destroyTimer;
+    }
+
+    private void OnEnable()
+    {
+        timer = destroyTimer;
+        timerIsRunning = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        timerIsRunning = true;
+        if (other.CompareTag("Player"))
+        {
+            timerIsRunning = true;
+        }
     }
 
     private void Update()
     {
         if (!timerIsRunning) return;
 
-        destroyTimer -= Time.deltaTime;
+        timer -= Time.deltaTime;
 
-        if (destroyTimer <= 0f)
+        if (timer <= 0f)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 }

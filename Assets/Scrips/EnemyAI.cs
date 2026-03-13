@@ -130,7 +130,7 @@ public class EnemyScript : MonoBehaviour
         dir /= dist;
 
         // If the AI hits an obstacle before reaching the player, LOS is blocked
-        return !Physics.Raycast(origin, dir, dist, visionBlockMask, QueryTriggerInteraction.Ignore);
+        return !Physics.Raycast(origin, dir, dist, visionBlockMask); //QueryTriggerInteraction.Ignore
     }
 
     private void ChasePlayerWithPathing()
@@ -177,7 +177,5 @@ public class EnemyScript : MonoBehaviour
         {
             health.TakeDamage(damage);
         }
-
-        Debug.Log("Enemy attacks!");
     }
 }

@@ -5,6 +5,8 @@ public class PlayerRespawn : MonoBehaviour
 {
     private CharacterController characterController;
 
+    public GameObject[] platformInstance;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -13,7 +15,10 @@ public class PlayerRespawn : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
+        {
             Respawn();
+            RespawnPlatforms();
+        }
 
         // Playtest: keys 1-9 jump to checkpoint index 0-8
         for (int i = 5; i < 9; i++)
@@ -45,5 +50,14 @@ public class PlayerRespawn : MonoBehaviour
 
         // Turn it back on
         characterController.enabled = true;
+    }
+
+    public void RespawnPlatforms()
+    {
+        if (platformInstance != null)
+        {
+            foreach (var p in platformInstance)
+                if (p != null) p.SetActive(true);
+        }
     }
 }
