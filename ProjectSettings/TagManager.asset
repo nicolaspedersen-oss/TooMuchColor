@@ -11,6 +11,7 @@ TagManager:
   - Yellow
   - Enemy
   - PickUp
+  - StartPoint
   layers:
   - Default
   - TransparentFX

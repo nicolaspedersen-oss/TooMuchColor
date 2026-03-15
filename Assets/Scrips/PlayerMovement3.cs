@@ -309,6 +309,7 @@ public class PlayerMovement3 : MonoBehaviour
         // reset fall speed and allow jumps after launch
         jumpsUsed = 0;
         coyoteTimer = 0f;
+        //jumpBufferTime = 0f;
 
         // also lock ground briefly so launch doesn't instantly "land"
         groundedLockTimer = groundedLockTimeAfterJump;

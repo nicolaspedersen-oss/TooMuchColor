@@ -32974,7 +32974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6414484554589120365, guid: 1757c4504c96b0a408f3ff2bad428378, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.2936044
+      value: 8.49
       objectReference: {fileID: 0}
     - target: {fileID: 6414484554589120365, guid: 1757c4504c96b0a408f3ff2bad428378, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40749,7 +40749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.68
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57393,6 +57393,18 @@ PrefabInstance:
       propertyPath: startPromptPanel
       value: 
       objectReference: {fileID: 165218636}
+    - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: spawnVerticalVelocity
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: verticalVelocityOnLoad
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: defaultSpawnVerticalVelocity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2654976177928496489, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: m_Name
       value: MenuManager
