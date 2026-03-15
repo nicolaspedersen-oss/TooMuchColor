@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement4 : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float strafeSpeed = 10f;
-    
+
     [Header("Mouse Look")]
     [SerializeField] private float mouseSensitivity = 1.3f;
     [SerializeField] private Transform playerCamera;
@@ -31,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashDuration = 0.15f;
     [SerializeField] private float dashCooldown = 0.6f;
     [SerializeField] private int maxDashes = 1;
+
+    [Header("Input Actions (New Input System)")]
+    [SerializeField] private InputActionReference moveAction;   // Vector2
+    [SerializeField] private InputActionReference lookAction;   // Vector2
+    [SerializeField] private InputActionReference jumpAction;   // Button
+    [SerializeField] private InputActionReference dashAction;   // Button (right mouse, etc.)
 
     private Rigidbody rb;
     private int count;
@@ -87,20 +94,38 @@ public class PlayerMovement : MonoBehaviour
         ApplyMovement();
     }
 
+    private void OnEnable()
+    {
+        moveAction?.action.Enable();
+        lookAction?.action.Enable();
+        jumpAction?.action.Enable();
+        dashAction?.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction?.action.Disable();
+        lookAction?.action.Disable();
+        jumpAction?.action.Disable();
+        dashAction?.action.Disable();
+    }
+
     // Input Layer
     private void ReadInput()
     {
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        Vector2 move = moveAction != null ? moveAction.action.ReadValue<Vector2>() : Vector2.zero;
+        moveInput.x = move.x;
+        moveInput.y = move.y;
 
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        Vector2 look = lookAction != null ? lookAction.action.ReadValue<Vector2>() : Vector2.zero;
+        mouseX = look.x * mouseSensitivity;
+        mouseY = look.y * mouseSensitivity;
 
-        jumpPressedThisFrame = Input.GetButtonDown("Jump");
-        jumpReleasedThisFrame = Input.GetButtonUp("Jump");
-        jumpHeld = Input.GetButton("Jump");
+        jumpPressedThisFrame = jumpAction != null && jumpAction.action.WasPressedThisFrame();
+        jumpReleasedThisFrame = jumpAction != null && jumpAction.action.WasReleasedThisFrame();
+        jumpHeld = jumpAction != null && jumpAction.action.IsPressed();
 
-        dashPressedThisFrame = Input.GetMouseButtonDown(1);
+        dashPressedThisFrame = dashAction != null && dashAction.action.WasPressedThisFrame();
     }
 
     // State Layer (ground + timers + jump count reset)
@@ -260,7 +285,7 @@ public class PlayerMovement : MonoBehaviour
         // reset fall speed and allow jumps after launch
         jumpsUsed = 0;
         coyoteTimer = 0f;
-        //jumpBufferTime = 0;
+        jumpBufferTime = 0;
     }
     void OnTriggerEnter(Collider other)
     {

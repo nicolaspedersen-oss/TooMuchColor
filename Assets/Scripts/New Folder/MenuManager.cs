@@ -7,19 +7,27 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject startPromptPanel;
     [SerializeField] private GameObject mainMenuPanel;
 
+    [Header("Default Spawn Launch (if not set by trigger)")]
+    [SerializeField] private float defaultSpawnVerticalVelocity = 0f;
+
     private bool isMenuOpen = false;
     private bool levelStarted = false;
     private bool isCursorVisable;
 
-    void Start()
+    private void OnEnable()
     {
-        Time.timeScale = 0f; // Pause the game
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     void Update()
     {
         if (!levelStarted && Keyboard.current.anyKey.wasPressedThisFrame)
         {
-            // Only start if the key pressed is NOT Escape
             if (!Input.GetKeyDown(KeyCode.Escape))
             {
                 StartLevel();
@@ -38,9 +46,9 @@ public class MenuManager : MonoBehaviour
 
         isMenuOpen = !isMenuOpen;
         if (!mainMenuPanel) return;
+
         mainMenuPanel.SetActive(isMenuOpen);
 
-        // Pause or resume game
         if (isMenuOpen)
         {
             Time.timeScale = 0f;
@@ -55,7 +63,57 @@ public class MenuManager : MonoBehaviour
 
     public void LoadLevel(string sceneName)
     {
+        levelStarted = false;
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        var sp = GameObject.FindWithTag("StartPoint");
+        if (sp == null) return;
+
+        var p = GameObject.FindWithTag("Player");
+        if (p == null) return;
+
+        // Run the teleport + launch after the scene has fully settled (next frame)
+        StartCoroutine(SpawnAndLaunchNextFrame(p, sp));
+    }
+
+    private System.Collections.IEnumerator SpawnAndLaunchNextFrame(GameObject player, GameObject startPoint)
+    {
+        // Make sure we’re not paused (deltaTime must be > 0 to actually move)
+        Time.timeScale = 1f;
+
+        // Wait one frame so CharacterController + PlayerMovement Start() have run
+        yield return null;
+
+        // Find controller anywhere in hierarchy
+        var controller =
+            player.GetComponent<CharacterController>() ??
+            player.GetComponentInChildren<CharacterController>() ??
+            player.GetComponentInParent<CharacterController>();
+
+        // Slight lift to avoid being embedded/ground-snapped
+        Vector3 spawnPos = startPoint.transform.position + Vector3.up * 0.05f;
+        Quaternion spawnRot = startPoint.transform.rotation;
+
+        if (controller != null) controller.enabled = false;
+        player.transform.SetPositionAndRotation(spawnPos, spawnRot);
+        if (controller != null) controller.enabled = true;
+
+        // Wait one more frame after enabling controller (helps with grounded state)
+        yield return null;
+
+        // Find movement anywhere in hierarchy and launch
+        var movement =
+            player.GetComponent<PlayerMovement>() ??
+            player.GetComponentInChildren<PlayerMovement>() ??
+            player.GetComponentInParent<PlayerMovement>();
+
+        if (movement != null)
+        {
+            movement.Launch(defaultSpawnVerticalVelocity);
+        }
     }
 
     private void StartLevel()
@@ -70,7 +128,7 @@ public class MenuManager : MonoBehaviour
     public void ResumeGame()
     {
         isMenuOpen = false;
-        mainMenuPanel.SetActive(false);
+        if (mainMenuPanel) mainMenuPanel.SetActive(false);
         Time.timeScale = 1f;
     }
 

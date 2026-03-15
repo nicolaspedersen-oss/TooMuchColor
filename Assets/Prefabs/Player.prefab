@@ -458,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   strafeSpeed: 10
-  mouseSensitivity: 1.5
+  mouseSensitivity: 0.75
   playerCamera: {fileID: 2187147155986304266}
   minPitch: -80
   maxPitch: 90
@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd57774c3c87c347abddaa0f2188e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformInstance: []
 --- !u!114 &1912178151796072802
 MonoBehaviour:
   m_ObjectHideFlags: 0
