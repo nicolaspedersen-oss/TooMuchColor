@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,20 +12,37 @@ public class StopTraps : MonoBehaviour, IHitReceiver
     [SerializeField] private GameObject stopVfx;
 
     [Header("Puzzle Event")]
-    [SerializeField] private UnityEvent onStoped;
+    [SerializeField] private UnityEvent onStopped;
 
-    private bool stoped;
+    [Header("Re-arm")]
+    [SerializeField] private float rearmDelay = 5f; // match your trap stop duration
+
+    private bool stopped;
+    private Coroutine rearmRoutine;
 
     public void ReceiveHit(AttackHit hit, Vector3 hitPoint, GameObject instigator)
     {
-        if (stoped) return;
+        if (stopped) return;
         if (hit.element != requiredElement) return;
 
-        stoped = true;
+        stopped = true;
 
         if (stopVfx) Instantiate(stopVfx, hitPoint, Quaternion.identity);
         if (stopVisual) stopVisual.SetActive(false);
 
-        onStoped?.Invoke();
+        onStopped?.Invoke();
+
+        if (rearmRoutine != null) StopCoroutine(rearmRoutine);
+        rearmRoutine = StartCoroutine(RearmAfterDelay());
+    }
+
+    private IEnumerator RearmAfterDelay()
+    {
+        yield return new WaitForSeconds(rearmDelay);
+
+        stopped = false;
+        if (stopVisual) stopVisual.SetActive(true);
+
+        rearmRoutine = null;
     }
 }

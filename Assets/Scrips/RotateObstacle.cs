@@ -1,29 +1,38 @@
+using System.Collections;
 using UnityEngine;
 
 public class RotateObstacle : MonoBehaviour
 {
-    public Vector3 rotationSpeed = new Vector3(0, 100, 0);
+    [SerializeField] private Vector3 rotationSpeed = new Vector3(0, 100, 0);
+    [SerializeField] private float stopDuration = 5f;
 
-    public float timeRemaning = 5f;
-    private bool timerIsRunning = false;
+    private Vector3 defaultRotationSpeed;
+    private Coroutine stopRoutine;
 
-    void Update()
+    private void Awake()
+    {
+        defaultRotationSpeed = rotationSpeed;
+    }
+
+    private void Update()
     {
         transform.Rotate(rotationSpeed * Time.deltaTime);
     }
 
+    // Hook this into StopTraps.onStoped
     public void StopTrap()
     {
-        rotationSpeed = Vector3.zero;
-        timerIsRunning = true;
+        if (stopRoutine != null)
+            StopCoroutine(stopRoutine);
 
-        if (timerIsRunning)
-        {
-            if (timeRemaning < 0f)
-            {
-                timeRemaning -= Time.deltaTime;
-                transform.Rotate(rotationSpeed * Time.deltaTime);
-            }
-        }
+        stopRoutine = StartCoroutine(StopForSeconds(stopDuration));
+    }
+
+    private IEnumerator StopForSeconds(float seconds)
+    {
+        rotationSpeed = Vector3.zero;
+        yield return new WaitForSeconds(seconds);
+        rotationSpeed = defaultRotationSpeed;
+        stopRoutine = null;
     }
 }
