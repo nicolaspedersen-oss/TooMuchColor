@@ -7,7 +7,7 @@ public class TutorialPopup : MonoBehaviour
     private void Awake()
     {
         if (popupObject != null)
-            popupObject.SetActive(false);
+            popupObject.SetActive(false); // only the visual!
     }
 
     public void Show()
@@ -27,5 +27,4 @@ public class TutorialPopup : MonoBehaviour
         if (popupObject.activeSelf && Input.GetKeyDown(KeyCode.E))
             Hide();
     }
-
 }
