@@ -33,6 +33,7 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private Transform slashOrigin;
     [SerializeField] private float slashForwardOffset = 1.2f;
     [SerializeField] private bool slashUsesCurrentElement = false;
+    [SerializeField] private ParticleSystem slashEffect;
 
     [Header("Brush Prefabs")]
     public GameObject[] brushes;
@@ -110,6 +111,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         if (slashCooldownTimer > 0f) return;
         slashCooldownTimer = slashCooldown;
+        slashEffect.Play();
 
         Transform originT = slashOrigin != null ? slashOrigin : transform;
 
