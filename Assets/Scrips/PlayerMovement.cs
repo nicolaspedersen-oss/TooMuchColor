@@ -238,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
     void SetCountText()
     {
         if (!countText) return; // Checks if countText is assigned. if not, return
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Coins found: " + count.ToString() + "/11";
     }
     // Camera Look
     private void UpdateLook()
