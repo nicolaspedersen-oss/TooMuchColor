@@ -33,15 +33,17 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private Transform slashOrigin;
     [SerializeField] private float slashForwardOffset = 1.2f;
     [SerializeField] private bool slashUsesCurrentElement = false;
-    [SerializeField] private ParticleSystem slashEffect;
+    //[SerializeField] private ParticleSystem slashEffect;
 
     [Header("Brush Prefabs")]
     public GameObject[] brushes;
+    public GameObject[] slashEffects;
 
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
     private float slashCooldownTimer;
     private float shootCooldownTimer;
+    private int activeSlashEffectIndex = 0;
 
     public AudioSource audioSource;
     public AudioClip shootSound;
@@ -66,21 +68,33 @@ public class PlayerAttackController : MonoBehaviour
         {
             current = ElementType.Fire;
             SwitchBrush(0);
+            SwitchSlashEffect(0);
+            SwitchSlashEffect(0);
+            activeSlashEffectIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             current = ElementType.Water;
             SwitchBrush(1);
+            SwitchSlashEffect(1);
+            SwitchSlashEffect(1);
+            activeSlashEffectIndex = 1;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             current = ElementType.Lightning;
             SwitchBrush(2);
+            SwitchSlashEffect(2);
+            SwitchSlashEffect(2);
+            activeSlashEffectIndex = 2;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             current = ElementType.Grass;
             SwitchBrush(3);
+            SwitchSlashEffect(3);
+            SwitchSlashEffect(3);
+            activeSlashEffectIndex = 3;
         }
 
         if (current == ElementType.Lightning)
@@ -107,22 +121,49 @@ public class PlayerAttackController : MonoBehaviour
         }
     }
 
+    void SwitchSlashEffect(int index)
+    {
+        for (int i = 0; i < slashEffects.Length; i++)
+        {
+            slashEffects[i].SetActive(i == index);
+        }
+    }
+
     void TrySlash()
     {
         if (slashCooldownTimer > 0f) return;
         slashCooldownTimer = slashCooldown;
-        slashEffect.Play();
 
         Transform originT = slashOrigin != null ? slashOrigin : transform;
 
-        // Center of melee volume in front of the player
+        // Play slash VFX exactly where it is in the hierarchy (no reposition / no rotation)
+        if (slashEffects != null && slashEffects.Length > 0)
+        {
+            // If you're already calling SwitchSlashEffect(index),
+            // only one should be active at a time:
+            for (int i = 0; i < slashEffects.Length; i++)
+            {
+                if (!slashEffects[i].activeInHierarchy) continue;
+
+                var ps = slashEffects[i].GetComponent<ParticleSystem>();
+                if (ps == null) ps = slashEffects[i].GetComponentInChildren<ParticleSystem>();
+
+                if (ps != null)
+                {
+                    ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                    ps.Play(true);
+                }
+                break;
+            }
+        }
+
+        // ----- Gameplay overlap -----
         Vector3 center = originT.position + originT.forward * slashForwardOffset;
 
         var triggerMode = QueryTriggerInteraction.Collide;
-
         Collider[] hits = Physics.OverlapSphere(center, slashRadius, enemyMask, triggerMode);
 
-        // Build payload
+        // Build payload (unused in your code currently, but leaving it)
         AttackHit hitPayload;
         if (slashUsesCurrentElement)
         {
