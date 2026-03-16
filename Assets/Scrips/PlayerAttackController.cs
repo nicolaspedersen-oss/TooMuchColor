@@ -1,8 +1,4 @@
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEditor.TerrainTools;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
 
 public class PlayerAttackController : MonoBehaviour
 {
@@ -27,12 +23,10 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float beamRange = 40f;
     [SerializeField] private float beamDamage = 15f;
     [SerializeField] private float beamTickRate = 12f; // damage per second
-    //[SerializeField] private GameObject beamEffectPrefab;
     [SerializeField] private ParticleSystem beamEffectPrefab;
 
     [Header("Secondary Slash")]
     [SerializeField] private float slashDamage = 18f;
-    //[SerializeField] private float slashRange = 2.2f;
     [SerializeField] private float slashRadius = 1.0f;
     [SerializeField] private float slashCooldown = 0.35f;
     [SerializeField] private LayerMask enemyMask = ~0;
@@ -41,30 +35,18 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private bool slashUsesCurrentElement = false;
 
     [Header("Brush Prefabs")]
-    //[SerializeField] private GameObject fireBrushPrefab;
-    //[SerializeField] private GameObject waterBrushPrefab;
-    //[SerializeField] private GameObject lightningBrushPrefab;
-    //[SerializeField] private GameObject grassBrushPrefab;
     public GameObject[] brushes;
 
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
     private float slashCooldownTimer;
     private float shootCooldownTimer;
-    //private ParticleSystem particalSystem;
-    //private LineRenderer lineRenderer;
-    //public Transform beamOrigin;
-    //private float slashAttack;
 
     public AudioSource audioSource;
     public AudioClip shootSound;
 
     private void Awake()
     {
-        //lineRenderer = GetComponent<LineRenderer>();
-        //lineRenderer.positionCount = 2;
-        //slashAttack = GetComponent<SlashAttack>();
-        //particalSystem = GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -82,7 +64,7 @@ public class PlayerAttackController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             current = ElementType.Fire;
-            SwitchBrush(0); 
+            SwitchBrush(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -149,6 +131,7 @@ public class PlayerAttackController : MonoBehaviour
         {
             hitPayload = new AttackHit { damage = slashDamage, element = ElementType.Fire };
         }
+
         for (int i = 0; i < hits.Length; i++)
         {
             Collider collider = hits[i];
@@ -165,7 +148,6 @@ public class PlayerAttackController : MonoBehaviour
             Vector3 dirFlat = toFlat / distFlat;
             float dot = Vector3.Dot(forward, dirFlat);
 
-            // only "in front" check (OverlapSphere already handles reach)
             if (dot < 0.2f) continue;
 
             var enemyHealth = collider.GetComponentInParent<EnemyHealth>();
@@ -214,6 +196,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         beamEffectPrefab.Play();
         audioSource.PlayOneShot(shootSound);
+
         // tick-based so holding mouse does steady damage
         beamTickTimer -= Time.deltaTime;
         if (beamTickTimer > 0f) return;
@@ -248,7 +231,6 @@ public class PlayerAttackController : MonoBehaviour
                 }
             }
         }
-        
     }
 
     Vector3 GetAimDirection(out RaycastHit camHit)
