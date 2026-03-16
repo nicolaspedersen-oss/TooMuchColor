@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 
@@ -37,6 +40,13 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float slashForwardOffset = 1.2f;
     [SerializeField] private bool slashUsesCurrentElement = false;
 
+    [Header("Brush Prefabs")]
+    //[SerializeField] private GameObject fireBrushPrefab;
+    //[SerializeField] private GameObject waterBrushPrefab;
+    //[SerializeField] private GameObject lightningBrushPrefab;
+    //[SerializeField] private GameObject grassBrushPrefab;
+    public GameObject[] brushes;
+
     private ElementType current = ElementType.Fire;
     private float beamTickTimer;
     private float slashCooldownTimer;
@@ -57,6 +67,11 @@ public class PlayerAttackController : MonoBehaviour
         //particalSystem = GetComponent<ParticleSystem>();
     }
 
+    private void Start()
+    {
+        SwitchBrush(0);
+    }
+
     void Update()
     {
         // cooldown timers
@@ -64,10 +79,26 @@ public class PlayerAttackController : MonoBehaviour
         shootCooldownTimer -= Time.deltaTime;
 
         // Elemental selection
-        if (Input.GetKeyDown(KeyCode.Alpha1)) current = ElementType.Fire;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) current = ElementType.Water;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) current = ElementType.Lightning;
-        if (Input.GetKeyDown(KeyCode.Alpha4)) current = ElementType.Grass;
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            current = ElementType.Fire;
+            SwitchBrush(0); 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            current = ElementType.Water;
+            SwitchBrush(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            current = ElementType.Lightning;
+            SwitchBrush(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            current = ElementType.Grass;
+            SwitchBrush(3);
+        }
 
         if (current == ElementType.Lightning)
         {
@@ -82,6 +113,14 @@ public class PlayerAttackController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             TrySlash();
+        }
+    }
+
+    void SwitchBrush(int index)
+    {
+        for (int i = 0; i < brushes.Length; i++)
+        {
+            brushes[i].SetActive(i == index);
         }
     }
 
