@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +6,6 @@ public class DestroyObstacle : MonoBehaviour, IHitReceiver
     [Header("Puzzle Rule")]
     [SerializeField] private ElementType requiredElement;
     [SerializeField] private int hitsToDestroy = 1;
-    //[SerializeField] private bool consumeHitOnlyIfCorrect = true;
 
     [Header("Feedback")]
     [SerializeField] private GameObject correctVfx;
@@ -16,35 +14,40 @@ public class DestroyObstacle : MonoBehaviour, IHitReceiver
     [Header("Events")]
     [SerializeField] private UnityEvent onDestroyed;
 
-    private int remaning;
+    private int remainingHits;
 
     private void Awake()
     {
-        remaning = hitsToDestroy;
+        remainingHits = hitsToDestroy;
     }
 
-    public void ReceiveHit(AttackHit hit, Vector3 hitpoint, GameObject instigator)
+    public void ReceiveHit(AttackHit hit, Vector3 hitPoint, GameObject instigator)
     {
+        // Wrong element
         if (hit.element != requiredElement)
         {
-            if (wrongVfx)
-            {
-                Instantiate(wrongVfx, hitpoint, Quaternion.identity);
-            }
+            SpawnVfx(wrongVfx, hitPoint);
             return;
         }
 
-        if (correctVfx)
-        {
-            Instantiate(correctVfx, hitpoint, Quaternion.identity);
-        }
+        // Correct element
+        SpawnVfx(correctVfx, transform.position);
 
-        remaning -= 1;
+        remainingHits--;
 
-        if (remaning  <= 0)
+        if (remainingHits <= 0)
         {
             onDestroyed?.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    private void SpawnVfx(GameObject vfxPrefab, Vector3 position)
+    {
+        if (vfxPrefab == null)
+            return;
+
+        // Spawn at parent object, not hit point
+        Instantiate(vfxPrefab, position, Quaternion.identity, transform);
     }
 }
