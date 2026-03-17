@@ -74102,7 +74102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredElement: 0
   hitsToDestroy: 3
-  correctVfx: {fileID: 0}
+  correctVfx: {fileID: 7251879486380165639, guid: 85e3ddc94f384804d91013cda0b13010, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
     m_PersistentCalls:
