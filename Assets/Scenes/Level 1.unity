@@ -31966,7 +31966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1415768077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32432,6 +32432,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 675646622}
     - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: navMesh
+      value: 
+      objectReference: {fileID: 1415768076}
+    - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: surface
+      value: 
+      objectReference: {fileID: 1415768077}
+    - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: mainMenuPanel
       value: 
       objectReference: {fileID: 1523784664}
@@ -32450,6 +32458,10 @@ PrefabInstance:
     - target: {fileID: 2654976177928496489, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: m_Name
       value: MenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654976177928496489, guid: 017b901362e25b549b992b29a5147d30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8410201824448301403, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: m_LocalPosition.x
