@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashCooldown = 0.6f;
     [SerializeField] private int maxDashes = 1;
 
+    public AudioSource jumpSound;
+
     private Rigidbody rb;
     private int count;
     public TextMeshProUGUI countText;
@@ -100,6 +102,12 @@ public class PlayerMovement : MonoBehaviour
         jumpPressedThisFrame = Input.GetButtonDown("Jump");
         jumpReleasedThisFrame = Input.GetButtonUp("Jump");
         jumpHeld = Input.GetButton("Jump");
+
+         if (jumpPressedThisFrame)
+        {
+            jumpSound.Play();
+            AudioSource.PlayClipAtPoint(jumpSound.clip, transform.position);
+        }
 
         dashPressedThisFrame = Input.GetMouseButtonDown(1);
     }

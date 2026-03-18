@@ -1,32 +1,41 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ArenaManager : MonoBehaviour
 {
-    [Header("Assign the door for this arena")]
     public GameObject door;
 
-    [Header("Assign enemies manually or leave empty for auto count")]
-    public ArenaEnemy[] enemies;
+    private List<ArenaEnemy> enemies = new List<ArenaEnemy>();
 
     void Start()
     {
-        // Optional: auto-find enemies if array is empty
-        if (enemies.Length == 0)
+        // Find ONLY enemies inside this arena
+        ArenaEnemy[] allEnemies = FindObjectsOfType<ArenaEnemy>();
+
+        foreach (ArenaEnemy enemy in allEnemies)
         {
-            enemies = FindObjectsOfType<ArenaEnemy>();
+            if (Vector3.Distance(transform.position, enemy.transform.position) < 50f)
+            {
+                enemies.Add(enemy);
+                enemy.SetArena(this);
+            }
         }
+
+        Debug.Log("Enemies in arena: " + enemies.Count);
     }
 
-    // Call this when an enemy dies
     public void EnemyDied(ArenaEnemy enemy)
     {
-        // Remove enemy from the list
-        enemies = System.Array.FindAll(enemies, e => e != enemy);
+        enemies.Remove(enemy);
 
-        // Check if all enemies are dead
-        if (enemies.Length == 0 && door != null)
+        Debug.Log("Enemies left: " + enemies.Count);
+
+        if (enemies.Count == 0)
         {
-            Destroy(door);
+            Debug.Log("OPENING DOOR");
+
+            if (door != null)
+                Destroy(door);
         }
     }
 }

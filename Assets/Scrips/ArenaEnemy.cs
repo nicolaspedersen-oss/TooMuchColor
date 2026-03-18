@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class ArenaEnemy : MonoBehaviour
 {
-    public ArenaManager arenaManager; // Assign in inspector
+    private ArenaManager arena;
 
-    // Call this when the enemy dies
-    public void Die()
+    public void SetArena(ArenaManager manager)
     {
-        if (arenaManager != null)
-        {
-            arenaManager.EnemyDied(this);
-        }
+        arena = manager;
+    }
 
-        Destroy(gameObject);
+    void OnDestroy()
+    {
+        // This triggers EVEN if you don’t know how enemy dies
+        if (arena != null)
+        {
+            arena.EnemyDied(this);
+        }
     }
 }
