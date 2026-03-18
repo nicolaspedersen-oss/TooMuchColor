@@ -12,8 +12,11 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        Debug.Log("Checkpoint Colected!");
+        CheckPoint();
+    }
 
+    public void CheckPoint()
+    {
         CheckpointManager.Instance.SetCheckpoint(respawnPoint);
     }
 }

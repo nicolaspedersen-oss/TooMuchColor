@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointPopupManager : MonoBehaviour
 {
-    [SerializeField] private GameObject popupObject; // the TMP GameObject (can start disabled)
+    [SerializeField] private GameObject popupObject;
     [SerializeField] private TMP_Text popupText;
     [SerializeField] private string message = "Checkpoint reached!";
     [SerializeField] private float showSeconds = 1.5f;
@@ -23,13 +23,13 @@ public class CheckpointPopupManager : MonoBehaviour
             CheckpointManager.Instance.OnCheckpointReached -= Show;
     }
 
-    private void Show()
+    public void Show()
     {
         if (routine != null) StopCoroutine(routine);
         routine = StartCoroutine(Routine());
     }
 
-    private IEnumerator Routine()
+    public IEnumerator Routine()
     {
         popupObject.SetActive(true);
         popupText.text = message;
