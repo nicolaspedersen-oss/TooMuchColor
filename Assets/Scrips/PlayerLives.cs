@@ -9,38 +9,49 @@ public class PlayerLives : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
 
     private PlayerRespawn respawn;
-    private PlayerHealth playerDie;
     private int livesRemaining;
+    private bool isCursorVisable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         respawn = GetComponent<PlayerRespawn>();
-        playerDie = GetComponent<PlayerHealth>();
 
-        livesRemaining = 3;
+        livesRemaining = playerLives;
+
+        if (loseScreen != null)
+        {
+            loseScreen.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void LivesLost()
+    public void LoseLife()
     {
         livesRemaining--;
+
         if (livesRemaining > 0)
         {
             respawn.Respawn();
         }
         else
         {
-            playerDie.Die();
-
-            //popupObject.SetActive(true);
-            loseScreen.SetActive(true);
-            Time.timeScale = 0f;
+            GameOver();
         }
     }
+
+    public void GameOver()
+    {
+        if (!loseScreen) return;
+        if (loseScreen != null)
+        {
+            loseScreen.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            isCursorVisable = Cursor.visible = true;
+        }
+
+        Time.timeScale = 0;
+    }
+
+    public int LivesRemaning => livesRemaining;
 }
