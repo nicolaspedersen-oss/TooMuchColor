@@ -24,6 +24,7 @@ public class InteractionEvent : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         {
             playerInRange = true;
+            if (!textPrompt) return;
             textPrompt.SetActive(true);
         }
     }
@@ -33,6 +34,7 @@ public class InteractionEvent : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         {
             playerInRange= false;
+            if (!textPrompt) return;
             textPrompt.SetActive(false);
         }
     }

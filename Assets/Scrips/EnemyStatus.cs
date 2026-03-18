@@ -68,10 +68,9 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator DoSlow(float slowPercent, float duration)
     {
-        float original = ai.SpeedMultiplier;
-        ai.SpeedMultiplier = Mathf.Min(ai.SpeedMultiplier, 1f - Mathf.Clamp01(slowPercent));  
+        ai.SpeedMultiplier = Mathf.Min(ai.SpeedMultiplier, 1f - Mathf.Clamp01(slowPercent));
         yield return new WaitForSeconds(duration);
-        ai.SpeedMultiplier = original;
+        ai.SpeedMultiplier = 1f;
     }
 
     IEnumerator DoRoot(float duration)
