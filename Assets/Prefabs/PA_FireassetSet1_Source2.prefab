@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5635616094529413059}
   - component: {fileID: 6639053843752567861}
   - component: {fileID: 5913748129074093905}
+  - component: {fileID: 2667947580195091524}
   m_Layer: 0
   m_Name: PA_FireassetSet1_Source2
   m_TagString: Untagged
@@ -121,4 +122,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807debe48a6509944a2e3d9ec643a234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredElement: 0
   firePrefab: {fileID: 7251879486380165639, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
+  prefabAbove: {fileID: 0}
+  heightOffset: 1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2667947580195091524}
+        m_TargetAssemblyTypeName: Checkpoint, Assembly-CSharp
+        m_MethodName: CheckPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2667947580195091524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107138816535942091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57a4037309dfdb429ae5163ea84e8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}

@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744547297954377431, guid: c07631e61b8f6754685de3cc0f3ff7ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.256193
+      value: 13.905718
       objectReference: {fileID: 0}
     - target: {fileID: 5744547297954377431, guid: c07631e61b8f6754685de3cc0f3ff7ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.35
+      value: 3.6936035
       objectReference: {fileID: 0}
     - target: {fileID: 5744547297954377431, guid: c07631e61b8f6754685de3cc0f3ff7ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.440433
+      value: -98.47146
       objectReference: {fileID: 0}
     - target: {fileID: 5744547297954377431, guid: c07631e61b8f6754685de3cc0f3ff7ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredElement: 0
   hitsToDestroy: 3
-  correctVfx: {fileID: 0}
+  correctVfx: {fileID: 7251879486380165639, guid: 85e3ddc94f384804d91013cda0b13010, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
     m_PersistentCalls:

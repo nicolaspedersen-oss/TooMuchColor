@@ -1,4 +1,6 @@
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject startPromptPanel;
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private NavMeshSurface surface;
 
     [Header("Default Spawn Launch (if not set by trigger)")]
     [SerializeField] private float defaultSpawnVerticalVelocity = 0f;
@@ -69,6 +72,11 @@ public class MenuManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (!surface) return;
+
+        surface.gameObject.SetActive(true);
+        surface.enabled = true;
+       
         var sp = GameObject.FindWithTag("StartPoint");
         if (sp == null) return;
 
