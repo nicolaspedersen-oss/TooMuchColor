@@ -26,7 +26,6 @@ public class InteractionEvent : MonoBehaviour
             playerInRange = true;
             if (!textPrompt) return;
             textPrompt.SetActive(true);
-            gameObject.SetActive(false);
         }
     }
 
@@ -46,6 +45,7 @@ public class InteractionEvent : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             onInteract?.Invoke();
+            gameObject.SetActive(false);
         }
     }
 }
