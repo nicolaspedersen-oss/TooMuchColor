@@ -11,10 +11,9 @@ public class ArenaEnemy : MonoBehaviour
 
     void OnDestroy()
     {
-        // This triggers EVEN if you don’t know how enemy dies
         if (arena != null)
         {
-            arena.EnemyDied(this);
+            arena.EnemyDied();
         }
     }
 }

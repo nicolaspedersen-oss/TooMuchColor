@@ -1,41 +1,44 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class ArenaManager : MonoBehaviour
 {
     public GameObject door;
+    public ArenaEnemy[] enemies;
 
-    private List<ArenaEnemy> enemies = new List<ArenaEnemy>();
+    private int enemiesLeft;
 
     void Start()
     {
-        // Find ONLY enemies inside this arena
-        ArenaEnemy[] allEnemies = FindObjectsOfType<ArenaEnemy>();
+        enemiesLeft = enemies.Length;
 
-        foreach (ArenaEnemy enemy in allEnemies)
+        // Tell each enemy who owns it
+        foreach (ArenaEnemy enemy in enemies)
         {
-            if (Vector3.Distance(transform.position, enemy.transform.position) < 50f)
-            {
-                enemies.Add(enemy);
-                enemy.SetArena(this);
-            }
+            enemy.SetArena(this);
         }
 
-        Debug.Log("Enemies in arena: " + enemies.Count);
+        Debug.Log("Enemies in arena: " + enemiesLeft);
     }
 
-    public void EnemyDied(ArenaEnemy enemy)
+    public void EnemyDied()
     {
-        enemies.Remove(enemy);
+        enemiesLeft--;
 
-        Debug.Log("Enemies left: " + enemies.Count);
+        Debug.Log("Enemies left: " + enemiesLeft);
 
-        if (enemies.Count == 0)
+        if (enemiesLeft <= 0)
         {
-            Debug.Log("OPENING DOOR");
+            OpenDoor();
+        }
+    }
 
-            if (door != null)
-                Destroy(door);
+    void OpenDoor()
+    {
+        Debug.Log("Door opened!");
+
+        if (door != null)
+        {
+            Destroy(door);
         }
     }
 }
