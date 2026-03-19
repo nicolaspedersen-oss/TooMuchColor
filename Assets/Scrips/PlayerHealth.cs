@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private float lastHitSoundTime = -999f;
     private float currentHealth;
     private PlayerRespawn respawn;
+    private PlayerLives lives;
 
     [SerializeField] private DamageFlash damageFlash;
 
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         respawn = GetComponent<PlayerRespawn>();
+        lives = GetComponent<PlayerLives>();
 
         if (healthSlider != null)
         {
@@ -55,7 +57,10 @@ public class PlayerHealth : MonoBehaviour
         }
 
         if (currentHealth <= 0f)
+        {
+            lives.LoseLife();
             Die();
+        }
     }
 
     public void Die()

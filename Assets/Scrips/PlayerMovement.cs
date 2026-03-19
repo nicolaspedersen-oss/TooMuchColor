@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Android;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -249,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
         countText.text = "Coins found: " + count.ToString() + "/10";
     }
     // Camera Look
-    private void UpdateLook()
+    public void UpdateLook()
     {
         transform.Rotate(0f, mouseX, 0f);
 
@@ -278,7 +279,6 @@ public class PlayerMovement : MonoBehaviour
             count = count + 1;
 
             SetCountText();
-
         }
     }
 }

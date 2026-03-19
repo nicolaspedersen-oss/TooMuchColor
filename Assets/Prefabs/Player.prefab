@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: -4059768149643598103}
   - component: {fileID: 1912178151796072802}
   - component: {fileID: -355386121082479310}
+  - component: {fileID: 2389301380358784438}
   - component: {fileID: 3161963730253395721}
   - component: {fileID: 7434726356646366087}
   - component: {fileID: 2042169096017585489}
@@ -700,6 +701,21 @@ MonoBehaviour:
   slashEffects: []
   audioSource: {fileID: 7434726356646366087}
   shootSound: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+--- !u!114 &2389301380358784438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024451427290266160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b20e318c2874a41a3f051c60fce190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 5024451427290266160}
+  playerLives: 3
+  loseScreen: {fileID: 0}
 --- !u!114 &3161963730253395721
 MonoBehaviour:
   m_ObjectHideFlags: 0

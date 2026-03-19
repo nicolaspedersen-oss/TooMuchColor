@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
 
     public void ToggleMenu()
     {
-        Cursor.lockState = CursorLockMode.None;
+        
 
         isMenuOpen = !isMenuOpen;
         if (!mainMenuPanel) return;
@@ -55,12 +55,14 @@ public class MenuManager : MonoBehaviour
         if (isMenuOpen)
         {
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
             isCursorVisable = Cursor.visible = true;
         }
         else
         {
             Time.timeScale = 1f;
             isCursorVisable = Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -131,6 +133,11 @@ public class MenuManager : MonoBehaviour
         levelStarted = true;
         Time.timeScale = 1f;
         startPromptPanel.SetActive(false);
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ResumeGame()
