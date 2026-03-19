@@ -716,6 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPrompt: {fileID: 323852384}
   dialogueMenu: {fileID: 1255827839}
+  dialogueTextList: []
 --- !u!135 &99298485
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -749,7 +750,7 @@ GameObject:
   - component: {fileID: 323852387}
   - component: {fileID: 323852386}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PressE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,7 +886,7 @@ GameObject:
   - component: {fileID: 324884007}
   - component: {fileID: 324884006}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3438,7 +3439,7 @@ GameObject:
   - component: {fileID: 1255827841}
   - component: {fileID: 1255827840}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DialogueMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3542,7 +3543,7 @@ GameObject:
   - component: {fileID: 1256570061}
   - component: {fileID: 1256570060}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Frog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

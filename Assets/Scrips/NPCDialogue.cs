@@ -1,9 +1,13 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
 {
     [SerializeField] private GameObject textPrompt;
     [SerializeField] private GameObject dialogueMenu;
+
+    public List<GameObject> dialogueTextList = new List<GameObject>();
 
     private bool playerInRange;
 
