@@ -69,14 +69,12 @@ public class PlayerAttackController : MonoBehaviour
             current = ElementType.Fire;
             SwitchBrush(0);
             SwitchSlashEffect(0);
-            SwitchSlashEffect(0);
             activeSlashEffectIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             current = ElementType.Water;
             SwitchBrush(1);
-            SwitchSlashEffect(1);
             SwitchSlashEffect(1);
             activeSlashEffectIndex = 1;
         }
@@ -85,14 +83,12 @@ public class PlayerAttackController : MonoBehaviour
             current = ElementType.Lightning;
             SwitchBrush(2);
             SwitchSlashEffect(2);
-            SwitchSlashEffect(2);
             activeSlashEffectIndex = 2;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             current = ElementType.Grass;
             SwitchBrush(3);
-            SwitchSlashEffect(3);
             SwitchSlashEffect(3);
             activeSlashEffectIndex = 3;
         }

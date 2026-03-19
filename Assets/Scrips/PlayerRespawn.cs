@@ -20,7 +20,6 @@ public class PlayerRespawn : MonoBehaviour
             RespawnPlatforms();
         }
 
-        // Playtest: keys 1-9 jump to checkpoint index 0-8
         for (int i = 5; i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
