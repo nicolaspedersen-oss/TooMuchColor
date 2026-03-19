@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - PickUp
   - StartPoint
+  - Arena
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - Enemy
   - LavaFloor
-  - 
+  - Arena
   - 
   - 
   - 
@@ -48,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 2943757123
     locked: 0
   m_RenderingLayers:
   - Default
