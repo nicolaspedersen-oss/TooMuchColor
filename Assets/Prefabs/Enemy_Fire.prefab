@@ -931,8 +931,11 @@ MonoBehaviour:
   fireHitVfx: {fileID: 0}
   waterHitVfx: {fileID: 5957046248812549724, guid: f13c12c080ea1134eb86099fe95c6b59, type: 3}
   lightningHitVfx: {fileID: 0}
-  grassHitVfx: {fileID: 0}
-  vfxLifetime: 2
+  grassHitVfx: {fileID: 7814155249166279992, guid: ef577eb78a5158b4181189ff40707425, type: 3}
+  fireVfxLifetime: 2
+  waterVfxLifetime: 2
+  lightningVfxLifetime: 2
+  grassVfxLifetime: 2
   orientToHitNormal: 1
 --- !u!114 &4931261209030948567
 MonoBehaviour:
