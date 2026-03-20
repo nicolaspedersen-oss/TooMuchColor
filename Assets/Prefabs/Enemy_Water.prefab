@@ -545,6 +545,15 @@ MonoBehaviour:
   maxMaxHealthMultiplier: 2
   scalePerSameHit: 0.05
   maxScaleMultiplier: 2
+  fireHitVfx: {fileID: 6865592602347175034, guid: b115f8321ea25e44aa91960629e848b5, type: 3}
+  waterHitVfx: {fileID: 0}
+  lightningHitVfx: {fileID: 0}
+  grassHitVfx: {fileID: 0}
+  fireVfxLifetime: 2
+  waterVfxLifetime: 2
+  lightningVfxLifetime: 2
+  grassVfxLifetime: 2
+  orientToHitNormal: 1
 --- !u!114 &1488750654618711166
 MonoBehaviour:
   m_ObjectHideFlags: 0
