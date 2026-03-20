@@ -718,10 +718,12 @@ MonoBehaviour:
   dialogueMenu: {fileID: 1255827839}
   dialogueText: {fileID: 2123271172}
   lines:
-  - hi
-  - you
-  - little
-  - shit
+  - 'Hello Buck, your world is slowly losing it creative spirits and it colors. '
+  - I have choosen you since your creative soul is still sparkling.
+  - I have given you a paint brush that can use elemens as paint.
+  - You will have go through three realms to collect three gems to restore your world
+    back
+  - When you are ready, go throught the portal.
 --- !u!135 &99298485
 SphereCollider:
   m_ObjectHideFlags: 0
