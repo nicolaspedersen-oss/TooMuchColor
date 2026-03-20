@@ -9,6 +9,10 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private GameObject dialogueMenu;
     [SerializeField] private TMP_Text dialogueText;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject portal;
+    [SerializeField] private GameObject brush;
+
     [Header("Dialogue lines")]
     [TextArea(2, 4)]
     [SerializeField] private List<string> lines = new List<string>();
@@ -19,11 +23,17 @@ public class NPCDialogue : MonoBehaviour
 
     void Start()
     {
-        if (!textPrompt)
+        if (textPrompt != null)
             textPrompt.SetActive(false);
 
-        if (!dialogueMenu)
+        if (dialogueMenu != null)
             dialogueMenu.SetActive(false);
+
+        if (portal != null)
+            portal.SetActive(false);
+
+        if (brush != null) 
+            brush.SetActive(false);
     }
 
     void Update()
@@ -69,6 +79,16 @@ public class NPCDialogue : MonoBehaviour
         }
 
         dialogueText.text = lines[lineIndex];
+
+        if (lineIndex == lines.Count - 3)
+        {
+            brush.SetActive(true);
+        }
+
+        if (lineIndex == lines.Count -1)
+        {
+            portal.SetActive(true);
+        }
     }
 
     private void EndDialogue()
