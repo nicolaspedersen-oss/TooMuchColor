@@ -3374,15 +3374,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80
+      value: 34.27
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.82
+      value: 13.85
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 193.97
+      value: 60.07
       objectReference: {fileID: 0}
     - target: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35315,7 +35315,7 @@ GameObject:
   - component: {fileID: 896704997}
   - component: {fileID: 896704996}
   - component: {fileID: 896704995}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 'Poison Explanation '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61109,7 +61109,7 @@ GameObject:
   - component: {fileID: 1564397020}
   - component: {fileID: 1564397019}
   - component: {fileID: 1564397021}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flashing Damage_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63840,7 +63840,7 @@ GameObject:
   - component: {fileID: 1627437823}
   - component: {fileID: 1627437822}
   - component: {fileID: 1627437821}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 'Electric Explanation  '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
