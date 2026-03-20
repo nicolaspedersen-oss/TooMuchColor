@@ -16249,11 +16249,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &837362621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3500606398719544855, guid: 2b7bff53040ad6247a6f882a2185a02a, type: 3}
-  m_PrefabInstance: {fileID: 1097499399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &841944282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17867,7 +17862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465403062722629508, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
       propertyPath: damage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 465403062722629508, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
       propertyPath: moveSpeed
@@ -17875,7 +17870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 465403062722629508, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
       propertyPath: attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 465403062722629508, guid: 7d2bf686b02c5c043adfebdb3df1829d, type: 3}
       propertyPath: detectionRange
@@ -26321,6 +26316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrompts
       objectReference: {fileID: 0}
+    - target: {fileID: 3500606398719544855, guid: 2b7bff53040ad6247a6f882a2185a02a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4605768832585576430, guid: 2b7bff53040ad6247a6f882a2185a02a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -32960,7 +32959,7 @@ PrefabInstance:
     - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: startPromptPanel
       value: 
-      objectReference: {fileID: 837362621}
+      objectReference: {fileID: 0}
     - target: {fileID: -3022111174623306093, guid: 017b901362e25b549b992b29a5147d30, type: 3}
       propertyPath: spawnVerticalVelocity
       value: 0

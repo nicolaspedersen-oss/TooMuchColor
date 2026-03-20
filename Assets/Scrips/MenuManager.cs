@@ -45,8 +45,6 @@ public class MenuManager : MonoBehaviour
 
     public void ToggleMenu()
     {
-        
-
         isMenuOpen = !isMenuOpen;
         if (!mainMenuPanel) return;
 
@@ -74,6 +72,9 @@ public class MenuManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        levelStarted = true;
+        Time.timeScale = 1f;
+
         if (!surface) return;
 
         surface.gameObject.SetActive(true);
@@ -128,10 +129,10 @@ public class MenuManager : MonoBehaviour
 
     private void StartLevel()
     {
-        if (!startPromptPanel) return;
-
         levelStarted = true;
         Time.timeScale = 1f;
+
+        if (!startPromptPanel) return;
         startPromptPanel.SetActive(false);
     }
 
