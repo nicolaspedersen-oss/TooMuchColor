@@ -46,6 +46,7 @@ public class InteractionEvent : MonoBehaviour
         {
             onInteract?.Invoke();
             gameObject.SetActive(false);
+            textPrompt.SetActive(false);
         }
     }
 }
