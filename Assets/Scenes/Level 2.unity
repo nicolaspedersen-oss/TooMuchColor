@@ -48513,10 +48513,14 @@ PrefabInstance:
       propertyPath: countText
       value: 
       objectReference: {fileID: 665987293}
-    - target: {fileID: 6411364406825895884, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
-      propertyPath: jumpSound
-      value: 
-      objectReference: {fileID: 1959063871}
+    - target: {fileID: 7434726356646366087, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434726356646366087, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
+      propertyPath: m_Volume
+      value: 0.073
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68583,11 +68587,6 @@ PrefabInstance:
 --- !u!4 &1959063823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1717391980537701169, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
-  m_PrefabInstance: {fileID: 1451035223}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1959063871 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 398118025842901998, guid: 3c77028947246dc4cb726b88098a2e31, type: 3}
   m_PrefabInstance: {fileID: 1451035223}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1962351633
