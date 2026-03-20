@@ -33,7 +33,12 @@ public class EnemyHitReceiver : MonoBehaviour, IHitReceiver
     [SerializeField] private GameObject lightningHitVfx;
     [SerializeField] private GameObject grassHitVfx;
 
-    [SerializeField] private float vfxLifetime = 2f;
+    [Header("Element VFX Lifetime")]
+    [SerializeField] private float fireVfxLifetime = 2f;
+    [SerializeField] private float waterVfxLifetime = 2f;
+    [SerializeField] private float lightningVfxLifetime = 2f;
+    [SerializeField] private float grassVfxLifetime = 2f;
+
     [SerializeField] private bool orientToHitNormal = true;
 
     private Vector3 baseScale;
@@ -52,12 +57,10 @@ public class EnemyHitReceiver : MonoBehaviour, IHitReceiver
     public void ReceiveHit(AttackHit hit, Vector3 hitPoint, GameObject instigator)
     {
         // --- Spawn Element-Specific VFX ---
-        GameObject vfx = GetElementVFX(hit.element);
+        var vfxInfo = GetElementVFX(hit.element);
 
-        // Fallback normal (no hitNormal needed)
         Vector3 normal = (hitPoint - transform.position).normalized;
-
-        SpawnHitVFX(vfx, hitPoint, normal);
+        SpawnHitVFX(vfxInfo, hitPoint, normal);
         // ----------------------------------
 
         bool sameElement = hit.element == affinity;
@@ -107,30 +110,39 @@ public class EnemyHitReceiver : MonoBehaviour, IHitReceiver
 
     // ---------------- VFX SYSTEM ----------------
 
-    private GameObject GetElementVFX(ElementType element)
+    private struct VfxInfo
+    {
+        public GameObject prefab;
+        public float lifetime;
+    }
+
+    private VfxInfo GetElementVFX(ElementType element)
     {
         return element switch
         {
-            ElementType.Fire => fireHitVfx,
-            ElementType.Water => waterHitVfx,
-            ElementType.Lightning => lightningHitVfx,
-            ElementType.Grass => grassHitVfx,
-            _ => null
+            ElementType.Fire => new VfxInfo { prefab = fireHitVfx, lifetime = fireVfxLifetime },
+            ElementType.Water => new VfxInfo { prefab = waterHitVfx, lifetime = waterVfxLifetime },
+            ElementType.Lightning => new VfxInfo { prefab = lightningHitVfx, lifetime = lightningVfxLifetime },
+            ElementType.Grass => new VfxInfo { prefab = grassHitVfx, lifetime = grassVfxLifetime },
+            _ => new VfxInfo { prefab = null, lifetime = 0f }
         };
     }
 
-    private void SpawnHitVFX(GameObject prefab, Vector3 position, Vector3 normal)
+    private void SpawnHitVFX(VfxInfo info, Vector3 position, Vector3 normal)
     {
-        if (!prefab) return;
+        if (!info.prefab) return;
 
         Quaternion rotation = orientToHitNormal
             ? Quaternion.LookRotation(normal)
             : Quaternion.identity;
 
-        GameObject vfx = Instantiate(prefab, position, rotation);
+        GameObject vfx = Instantiate(info.prefab, position, rotation);
 
-        if (vfxLifetime > 0f)
-            Destroy(vfx, vfxLifetime);
+        // Make VFX follow the enemy
+        vfx.transform.SetParent(transform, worldPositionStays: true);
+
+        if (info.lifetime > 0f)
+            Destroy(vfx, info.lifetime);
     }
 
     // --------------------------------------------

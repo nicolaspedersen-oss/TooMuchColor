@@ -676,7 +676,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   fireProjectilePrefab: {fileID: 6184434488155519289, guid: abd746efd75a05d47b9f372c223bb717, type: 3}
   waterProjectilePrefab: {fileID: 6184434488155519289, guid: 92b882f85b553cc45b9fde23b6051196, type: 3}
-  grassProjectilePrefab: {fileID: 6184434488155519289, guid: c2b2e6d37fdaad946aab0d764990ee1e, type: 3}
+  grassProjectilePrefab: {fileID: 1759389744191711316, guid: 34fd3e074bc86974388c485c4fb80943, type: 3}
   muzzleVelocity: 100
   usesGravity: 1
   shootCooldown: 0.2
