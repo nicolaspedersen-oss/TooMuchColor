@@ -1552,7 +1552,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7776937, z: -0, w: 0.62864345}
   m_LocalPosition: {x: -0.8, y: 9.9, z: 1}
-  m_LocalScale: {x: 15.483932, y: 14.056741, z: 15.404424}
+  m_LocalScale: {x: 15.483932, y: 19.089054, z: 15.404424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1580642970}
@@ -2014,15 +2014,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7675413938097151410, guid: 369c0b629749d6644a76198fd0fd310a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.23
+      value: 2.28
       objectReference: {fileID: 0}
     - target: {fileID: 7675413938097151410, guid: 369c0b629749d6644a76198fd0fd310a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.09
+      value: -19.55
       objectReference: {fileID: 0}
     - target: {fileID: 7675413938097151410, guid: 369c0b629749d6644a76198fd0fd310a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 126.83
+      value: 126.57
       objectReference: {fileID: 0}
     - target: {fileID: 7675413938097151410, guid: 369c0b629749d6644a76198fd0fd310a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7908,20 +7908,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Swap Elements to kil elementals
-
-    Each Element effects the world differently
-
-    1
-    - Fire
-
-    2 - Water
-
-    3 - Lightning
-
-    4 - Grass
-
-    F - Slash Attack'
+  m_text: "Swap your Elements depending on wich enemy your fighting.\nAll the your
+    elements have different effects\nEnemies are strong and weak against certain
+    elements \n\n\nHold mouse1 to fire\n1 - Fire = Dot \n2 - Water = Slow\n3 - Lightning
+    = Beam\n4 - Grass = Root"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8016,8 +8006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 795.5, y: 50}
+  m_AnchoredPosition: {x: 0, y: 52}
+  m_SizeDelta: {x: 2068.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &401369998
 PrefabInstance:
@@ -11132,7 +11122,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 1106.3, y: 50}
+  m_SizeDelta: {x: 1357.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &539405304
 PrefabInstance:
@@ -15056,13 +15046,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752410131}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.33377156, z: -0, w: 0.9426541}
-  m_LocalPosition: {x: -32.91, y: -16.27, z: 146.65}
-  m_LocalScale: {x: 14.347357, y: 7.859183, z: 15.293765}
+  m_LocalRotation: {x: -0, y: -0.72628397, z: -0, w: 0.6873948}
+  m_LocalPosition: {x: -41.8, y: -16.27, z: 146.6}
+  m_LocalScale: {x: 17.8352, y: 9.769751, z: 19.01168}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1580642970}
-  m_LocalEulerAnglesHint: {x: 0, y: -38.996, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.152, z: 0}
 --- !u!114 &752410133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25166,7 +25156,7 @@ Transform:
   m_GameObject: {fileID: 1006972095}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.011641017, z: -0, w: 0.9999322}
-  m_LocalPosition: {x: -44.65, y: 0, z: 113.52}
+  m_LocalPosition: {x: -44.7, y: 0, z: 110.8}
   m_LocalScale: {x: 26.040867, y: 31.697977, z: 23.227808}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26363,7 +26353,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 652.4, y: 50}
+  m_SizeDelta: {x: 2091.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099418629
 MonoBehaviour:
@@ -26385,7 +26375,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can also use the elements to interact with the world
+  m_text: Your elements can also be used to overcome obstacles and interact with
+    the world
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31897,7 +31888,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 424.14, y: 50}
+  m_SizeDelta: {x: 868, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390199641
 MonoBehaviour:
@@ -36185,7 +36176,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 563.03, y: 50}
+  m_SizeDelta: {x: 3157, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1699339663
 PrefabInstance:
@@ -37396,8 +37387,8 @@ Transform:
   m_GameObject: {fileID: 1765658730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.011641017, z: -0, w: 0.9999322}
-  m_LocalPosition: {x: -45.5, y: -3.6, z: 76.1}
-  m_LocalScale: {x: 33.281734, y: 18.031986, z: 30.072613}
+  m_LocalPosition: {x: -45.4, y: -3.6, z: 81.7}
+  m_LocalScale: {x: 33.281734, y: 25.313303, z: 28.803246}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1580642970}
