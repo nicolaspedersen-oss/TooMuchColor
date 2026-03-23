@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e156368a768774399a107fbb8c66cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   distance: 3
   startOpposite: 0
 --- !u!114 &98088619
@@ -11429,7 +11429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -25169,7 +25169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -37563,7 +37563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -68504,7 +68504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -70246,7 +70246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -70427,7 +70427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -73287,7 +73287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
@@ -74574,7 +74574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e156368a768774399a107fbb8c66cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   distance: 3
   startOpposite: 1
 --- !u!114 &1865716886
@@ -80109,7 +80109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredElement: 0
-  hitsToDestroy: 3
+  hitsToDestroy: 2
   correctVfx: {fileID: 5839163022870441455, guid: b07f84f67c29def49a9194fc19d417cf, type: 3}
   wrongVfx: {fileID: 0}
   onDestroyed:
