@@ -1,23 +1,27 @@
-using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerLives : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private int playerLives = 3;
-    //[SerializeField] private GameObject popupObject;
+
     [SerializeField] private GameObject loseScreen;
 
-    private PlayerRespawn respawn;
-    private int livesRemaining;
-    private bool isCursorVisable;
+    [SerializeField] private List<GameObject> hearts = new List<GameObject>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private PlayerRespawn respawn;
+    private bool isCursorVisable;
+    private int livesRemaining;
+    private int heartsRemaining;
+    private int heartIndex = 3;
+
     void Awake()
     {
         respawn = GetComponent<PlayerRespawn>();
 
         livesRemaining = playerLives;
+        heartsRemaining = hearts.Count;
 
         if (loseScreen != null)
         {
@@ -25,9 +29,42 @@ public class PlayerLives : MonoBehaviour
         }
     }
 
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < hearts.Count; i++)
+        {
+            hearts[i].SetActive(i < livesRemaining); // If i is less than livesRemaining, heart is on. Otherwise off.
+        }
+    }
+
     public void LoseLife()
     {
         livesRemaining--;
+
+        UpdateHeartsUI();
+
+        if (livesRemaining > 0)
+            respawn.Respawn();
+        else
+            GameOver();
+    }
+
+    
+    /*
+    public void LoseLife()
+    {
+        livesRemaining--;
+
+        
+        if (hearts != null && hearts.Count > 0)                                             // Disable one heart if we have hearts assigned.
+        {
+            int indexToDisable = Mathf.Clamp(livesRemaining, 0, hearts.Count - 1);          // Turn off hearts from the end: 2, 1, 0
+
+            if (indexToDisable < hearts.Count && hearts[indexToDisable] != null)            // Only disable when we actually lost a life and the heart exists
+            {
+                hearts[indexToDisable].SetActive(false);
+            }
+        }
 
         if (livesRemaining > 0)
         {
@@ -38,6 +75,7 @@ public class PlayerLives : MonoBehaviour
             GameOver();
         }
     }
+    */
 
     public void GameOver()
     {
@@ -54,4 +92,44 @@ public class PlayerLives : MonoBehaviour
     }
 
     public int LivesRemaning => livesRemaining;
+
+    /*
+    private void HartsLeft()
+    {
+        if (hearts.Count > 0)
+        {
+            heartIndex--;
+
+            if (hearts.Count > 0)
+            {
+                heartsRemaining = hearts.Count;
+            }
+        }
+
+        for (int i = 0; i < 2;)
+        {
+
+        }
+        if (heartIndex == hearts.Count - 1)
+        {
+
+        }
+        if (heartIndex == hearts.Count - 2)
+        {
+
+        }
+        if (heartIndex == hearts.Count - 3)
+        {
+
+        }
+        if (livesRemaining > 0)
+        {
+            respawn.Respawn();
+        }
+        else
+        {
+            GameOver();
+        }
+    }
+    */
 }
