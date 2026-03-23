@@ -724,8 +724,11 @@ MonoBehaviour:
   portal: {fileID: 1588738668}
   brush: {fileID: 1589625116}
   lines:
-  - 'Hello Buck, your world is slowly losing it creative spirits and it colors. '
-  - I have choosen you since your creative soul is still sparkling.
+  - 'Hello Buck, your world is slowly losing it''s creative spirits and it''s colors. '
+  - I know you are an artist who has been struggling with painting lately, but this
+    could help you.
+  - "Your creative soul is still sparkling, and this journey I\u2019m setting you
+    on could give you new inspiration."
   - I have given you a paint brush that can use elemens as paint.
   - You will have go through three realms to collect three gems to restore your world
     back
