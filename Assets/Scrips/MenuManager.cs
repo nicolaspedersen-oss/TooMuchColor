@@ -86,13 +86,11 @@ public class MenuManager : MonoBehaviour
         var p = GameObject.FindWithTag("Player");
         if (p == null) return;
 
-        // Run the teleport + launch after the scene has fully settled (next frame)
         StartCoroutine(SpawnAndLaunchNextFrame(p, sp));
     }
 
     private System.Collections.IEnumerator SpawnAndLaunchNextFrame(GameObject player, GameObject startPoint)
     {
-        // Make sure we’re not paused (deltaTime must be > 0 to actually move)
         Time.timeScale = 1f;
 
         // Wait one frame so CharacterController + PlayerMovement Start() have run
@@ -104,7 +102,6 @@ public class MenuManager : MonoBehaviour
             player.GetComponentInChildren<CharacterController>() ??
             player.GetComponentInParent<CharacterController>();
 
-        // Slight lift to avoid being embedded/ground-snapped
         Vector3 spawnPos = startPoint.transform.position + Vector3.up * 0.05f;
         Quaternion spawnRot = startPoint.transform.rotation;
 
@@ -112,7 +109,6 @@ public class MenuManager : MonoBehaviour
         player.transform.SetPositionAndRotation(spawnPos, spawnRot);
         if (controller != null) controller.enabled = true;
 
-        // Wait one more frame after enabling controller (helps with grounded state)
         yield return null;
 
         // Find movement anywhere in hierarchy and launch

@@ -24,8 +24,6 @@ public class EnemyStatus : MonoBehaviour
 
     public void ApplyHit(AttackHit hit)
     {
-        //Debug.Log($"ApplyHit: {hit.element} root={hit.rootDuration} ai={(ai != null)}", this);
-
         switch (hit.element)
         {
             case ElementType.Fire:
@@ -50,8 +48,6 @@ public class EnemyStatus : MonoBehaviour
                     rootRoutine = StartCoroutine(DoRoot(hit.rootDuration));
                 }
                 break;
-
-                // Lightning here
         }
     }
 
@@ -75,12 +71,10 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator DoRoot(float duration)
     {
-        //Debug.Log($"ROOT START {duration}s", this);
         ai.IsRooted = true;
 
         yield return new WaitForSeconds(duration);
         
         ai.IsRooted = false;
-        //Debug.Log("ROOT END", this);
     }
 }

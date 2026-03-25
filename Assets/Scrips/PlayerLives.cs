@@ -33,7 +33,7 @@ public class PlayerLives : MonoBehaviour
     {
         for (int i = 0; i < hearts.Count; i++)
         {
-            hearts[i].SetActive(i < livesRemaining); // If i is less than livesRemaining, heart is on. Otherwise off.
+            hearts[i].SetActive(i < livesRemaining);
         }
     }
 
@@ -48,34 +48,6 @@ public class PlayerLives : MonoBehaviour
         else
             GameOver();
     }
-
-    
-    /*
-    public void LoseLife()
-    {
-        livesRemaining--;
-
-        
-        if (hearts != null && hearts.Count > 0)                                             // Disable one heart if we have hearts assigned.
-        {
-            int indexToDisable = Mathf.Clamp(livesRemaining, 0, hearts.Count - 1);          // Turn off hearts from the end: 2, 1, 0
-
-            if (indexToDisable < hearts.Count && hearts[indexToDisable] != null)            // Only disable when we actually lost a life and the heart exists
-            {
-                hearts[indexToDisable].SetActive(false);
-            }
-        }
-
-        if (livesRemaining > 0)
-        {
-            respawn.Respawn();
-        }
-        else
-        {
-            GameOver();
-        }
-    }
-    */
 
     public void GameOver()
     {
@@ -92,44 +64,4 @@ public class PlayerLives : MonoBehaviour
     }
 
     public int LivesRemaning => livesRemaining;
-
-    /*
-    private void HartsLeft()
-    {
-        if (hearts.Count > 0)
-        {
-            heartIndex--;
-
-            if (hearts.Count > 0)
-            {
-                heartsRemaining = hearts.Count;
-            }
-        }
-
-        for (int i = 0; i < 2;)
-        {
-
-        }
-        if (heartIndex == hearts.Count - 1)
-        {
-
-        }
-        if (heartIndex == hearts.Count - 2)
-        {
-
-        }
-        if (heartIndex == hearts.Count - 3)
-        {
-
-        }
-        if (livesRemaining > 0)
-        {
-            respawn.Respawn();
-        }
-        else
-        {
-            GameOver();
-        }
-    }
-    */
 }
